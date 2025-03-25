@@ -1,0 +1,151 @@
+<db>
+    <film idfilm="F001">
+        <titre>Mean Streets</titre>
+        <realisateur>Martin Scorsese</realisateur>
+        <synopsis>Un petit criminel tente de survivre dans le quartier de Little Italy à New York.</synopsis>
+        <annee>1973</annee>
+        <acteur>Harvey Keitel</acteur>
+        <acteur>Robert De Niro</acteur>
+        <acteur>David Proval</acteur>
+    </film>
+
+    <film idfilm="F002">
+        <titre>Taxi Driver</titre>
+        <realisateur>Martin Scorsese</realisateur>
+        <synopsis>Un vétéran solitaire devient chauffeur de taxi à New York et sombre dans la violence.</synopsis>
+        <annee>1976</annee>
+        <acteur>Robert De Niro</acteur>
+        <acteur>Jodie Foster</acteur>
+        <acteur>Harvey Keitel</acteur>
+    </film>
+
+    <film idfilm="F003">
+        <titre>Raging Bull</titre>
+        <realisateur>Martin Scorsese</realisateur>
+        <synopsis>La montée et la chute du boxeur Jake LaMotta.</synopsis>
+        <annee>1980</annee>
+        <acteur>Robert De Niro</acteur>
+        <acteur>Joe Pesci</acteur>
+        <acteur>Cathy Moriarty</acteur>
+    </film>
+
+    <film idfilm="F004">
+        <titre>The King of Comedy</titre>
+        <realisateur>Martin Scorsese</realisateur>
+        <synopsis>Un comédien raté tente désespérément de devenir une star.</synopsis>
+        <annee>1982</annee>
+        <acteur>Robert De Niro</acteur>
+        <acteur>Jerry Lewis</acteur>
+        <acteur>Sandra Bernhard</acteur>
+    </film>
+
+    <film idfilm="F005">
+        <titre>Goodfellas</titre>
+        <realisateur>Martin Scorsese</realisateur>
+        <synopsis>L'ascension et la chute de Henry Hill dans le monde de la mafia.</synopsis>
+        <annee>1990</annee>
+        <acteur>Ray Liotta</acteur>
+        <acteur>Robert De Niro</acteur>
+        <acteur>Joe Pesci</acteur>
+    </film>
+
+    <film idfilm="F006">
+        <titre>Cape Fear</titre>
+        <realisateur>Martin Scorsese</realisateur>
+        <synopsis>Un criminel manipulateur cherche à se venger de son avocat.</synopsis>
+        <annee>1991</annee>
+        <acteur>Robert De Niro</acteur>
+        <acteur>Nick Nolte</acteur>
+        <acteur>Jessica Lange</acteur>
+    </film>
+
+    <film idfilm="F007">
+        <titre>Casino</titre>
+        <realisateur>Martin Scorsese</realisateur>
+        <synopsis>Un homme d'affaires dirige un casino à Las Vegas sous le contrôle de la mafia.</synopsis>
+        <annee>1995</annee>
+        <acteur>Robert De Niro</acteur>
+        <acteur>Sharon Stone</acteur>
+        <acteur>Joe Pesci</acteur>
+    </film>
+
+    <film idfilm="F008">
+        <titre>Gangs of New York</titre>
+        <realisateur>Martin Scorsese</realisateur>
+        <synopsis>La lutte pour le pouvoir entre gangs à New York au XIXe siècle.</synopsis>
+        <annee>2002</annee>
+        <acteur>Leonardo DiCaprio</acteur>
+        <acteur>Daniel Day-Lewis</acteur>
+        <acteur>Cameron Diaz</acteur>
+    </film>
+
+    <film idfilm="F009">
+        <titre>The Aviator</titre>
+        <realisateur>Martin Scorsese</realisateur>
+        <synopsis>La vie de l'aviateur et producteur de cinéma Howard Hughes.</synopsis>
+        <annee>2004</annee>
+        <acteur>Leonardo DiCaprio</acteur>
+        <acteur>Cate Blanchett</acteur>
+        <acteur>Kate Beckinsale</acteur>
+    </film>
+
+    <film idfilm="F010">
+        <titre>The Departed</titre>
+        <realisateur>Martin Scorsese</realisateur>
+        <synopsis>Un policier infiltré et une taupe dans la police s'affrontent.</synopsis>
+        <annee>2006</annee>
+        <acteur>Leonardo DiCaprio</acteur>
+        <acteur>Matt Damon</acteur>
+        <acteur>Jack Nicholson</acteur>
+    </film>
+
+    <film idfilm="F011">
+        <titre>Shutter Island</titre>
+        <realisateur>Martin Scorsese</realisateur>
+        <synopsis>Un enquêteur enquête sur la disparition d'une patiente dans un hôpital psychiatrique.</synopsis>
+        <annee>2010</annee>
+        <acteur>Leonardo DiCaprio</acteur>
+        <acteur>Mark Ruffalo</acteur>
+        <acteur>Ben Kingsley</acteur>
+    </film>
+
+    <film idfilm="F012">
+        <titre>The Wolf of Wall Street</titre>
+        <realisateur>Martin Scorsese</realisateur>
+        <synopsis>La montée et la chute d'un courtier en bourse sans scrupules.</synopsis>
+        <annee>2013</annee>
+        <acteur>Leonardo DiCaprio</acteur>
+        <acteur>Jonah Hill</acteur>
+        <acteur>Margot Robbie</acteur>
+    </film>
+
+    <film idfilm="F013">
+        <titre>Silence</titre>
+        <realisateur>Martin Scorsese</realisateur>
+        <synopsis>Deux missionnaires chrétiens se rendent au Japon au XVIIe siècle.</synopsis>
+        <annee>2016</annee>
+        <acteur>Andrew Garfield</acteur>
+        <acteur>Adam Driver</acteur>
+        <acteur>Liam Neeson</acteur>
+    </film>
+
+    <film idfilm="F014">
+        <titre>The Irishman</titre>
+        <realisateur>Martin Scorsese</realisateur>
+        <synopsis>Un tueur à gages de la mafia raconte sa vie et ses crimes.</synopsis>
+        <annee>2019</annee>
+        <acteur>Robert De Niro</acteur>
+        <acteur>Al Pacino</acteur>
+        <acteur>Joe Pesci</acteur>
+    </film>
+
+    <film idfilm="F015">
+        <titre>Killers of the Flower Moon</titre>
+        <realisateur>Martin Scorsese</realisateur>
+        <synopsis>Une série de meurtres dans la nation Osage après la découverte de pétrole.</synopsis>
+        <annee>2023</annee>
+        <acteur>Leonardo DiCaprio</acteur>
+        <acteur>Robert De Niro</acteur>
+        <acteur>Lily Gladstone</acteur>
+    </film>
+</db>

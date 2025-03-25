@@ -1,0 +1,121 @@
+<db>
+    <film idfilm="F001">
+        <titre>Following</titre>
+        <realisateur>Christopher Nolan</realisateur>
+        <synopsis>Un écrivain suit des étrangers pour s'inspirer, mais se retrouve impliqué dans un vol.</synopsis>
+        <annee>1998</annee>
+        <acteur>Jeremy Theobald</acteur>
+        <acteur>Alex Haw</acteur>
+        <acteur>Lucy Russell</acteur>
+    </film>
+
+    <film idfilm="F002">
+        <titre>Memento</titre>
+        <realisateur>Christopher Nolan</realisateur>
+        <synopsis>Un homme amnésique utilise des notes et des tatouages pour retrouver le meurtrier de sa femme.</synopsis>
+        <annee>2000</annee>
+        <acteur>Guy Pearce</acteur>
+        <acteur>Carrie-Anne Moss</acteur>
+        <acteur>Joe Pantoliano</acteur>
+    </film>
+
+    <film idfilm="F003">
+        <titre>Insomnia</titre>
+        <realisateur>Christopher Nolan</realisateur>
+        <synopsis>Deux détectives enquêtent sur un meurtre en Alaska, mais l'un d'eux est hanté par l'insomnie.</synopsis>
+        <annee>2002</annee>
+        <acteur>Al Pacino</acteur>
+        <acteur>Robin Williams</acteur>
+        <acteur>Hilary Swank</acteur>
+    </film>
+
+    <film idfilm="F004">
+        <titre>Batman Begins</titre>
+        <realisateur>Christopher Nolan</realisateur>
+        <synopsis>Bruce Wayne devient Batman et combat la Ligue des Ombres qui menace Gotham.</synopsis>
+        <annee>2005</annee>
+        <acteur>Christian Bale</acteur>
+        <acteur>Michael Caine</acteur>
+        <acteur>Liam Neeson</acteur>
+    </film>
+
+    <film idfilm="F005">
+        <titre>The Prestige</titre>
+        <realisateur>Christopher Nolan</realisateur>
+        <synopsis>Deux magiciens rivaux se livrent une bataille acharnée pour surpasser l'autre.</synopsis>
+        <annee>2006</annee>
+        <acteur>Hugh Jackman</acteur>
+        <acteur>Christian Bale</acteur>
+        <acteur>Scarlett Johansson</acteur>
+    </film>
+
+    <film idfilm="F006">
+        <titre>The Dark Knight</titre>
+        <realisateur>Christopher Nolan</realisateur>
+        <synopsis>Batman affronte le Joker, qui plonge Gotham dans le chaos.</synopsis>
+        <annee>2008</annee>
+        <acteur>Christian Bale</acteur>
+        <acteur>Heath Ledger</acteur>
+        <acteur>Aaron Eckhart</acteur>
+    </film>
+
+    <film idfilm="F007">
+        <titre>Inception</titre>
+        <realisateur>Christopher Nolan</realisateur>
+        <synopsis>Un voleur utilise la technologie pour infiltrer les rêves et implanter une idée.</synopsis>
+        <annee>2010</annee>
+        <acteur>Leonardo DiCaprio</acteur>
+        <acteur>Joseph Gordon-Levitt</acteur>
+        <acteur>Ellen Page</acteur>
+    </film>
+
+    <film idfilm="F008">
+        <titre>The Dark Knight Rises</titre>
+        <realisateur>Christopher Nolan</realisateur>
+        <synopsis>Batman revient pour affronter Bane, un ennemi redoutable qui menace Gotham.</synopsis>
+        <annee>2012</annee>
+        <acteur>Christian Bale</acteur>
+        <acteur>Tom Hardy</acteur>
+        <acteur>Anne Hathaway</acteur>
+    </film>
+
+    <film idfilm="F009">
+        <titre>Interstellar</titre>
+        <realisateur>Christopher Nolan</realisateur>
+        <synopsis>Un groupe d'astronautes voyage à travers un trou de ver pour sauver l'humanité.</synopsis>
+        <annee>2014</annee>
+        <acteur>Matthew McConaughey</acteur>
+        <acteur>Anne Hathaway</acteur>
+        <acteur>Jessica Chastain</acteur>
+    </film>
+
+    <film idfilm="F010">
+        <titre>Dunkirk</titre>
+        <realisateur>Christopher Nolan</realisateur>
+        <synopsis>Le récit de l'évacuation de Dunkerque pendant la Seconde Guerre mondiale.</synopsis>
+        <annee>2017</annee>
+        <acteur>Fionn Whitehead</acteur>
+        <acteur>Tom Hardy</acteur>
+        <acteur>Mark Rylance</acteur>
+    </film>
+
+    <film idfilm="F011">
+        <titre>Tenet</titre>
+        <realisateur>Christopher Nolan</realisateur>
+        <synopsis>Un agent secret manipule le temps pour empêcher une catastrophe mondiale.</synopsis>
+        <annee>2020</annee>
+        <acteur>John David Washington</acteur>
+        <acteur>Robert Pattinson</acteur>
+        <acteur>Elizabeth Debicki</acteur>
+    </film>
+
+    <film idfilm="F012">
+        <titre>Oppenheimer</titre>
+        <realisateur>Christopher Nolan</realisateur>
+        <synopsis>Le parcours de J. Robert Oppenheimer, le père de la bombe atomique.</synopsis>
+        <annee>2023</annee>
+        <acteur>Cillian Murphy</acteur>
+        <acteur>Emily Blunt</acteur>
+        <acteur>Robert Downey Jr.</acteur>
+    </film>
+</db>

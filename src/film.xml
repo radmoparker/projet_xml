@@ -1,0 +1,10 @@
+<!DOCTYPE db [
+        <!ELEMENT db (film*)>
+        <!ELEMENT film (titre, realisateur, synopsis, annee, acteur*)>
+        <!ATTLIST film idfilm ID #REQUIRED>
+        <!ELEMENT titre (#PCDATA)>
+        <!ELEMENT realisateur (#PCDATA)>
+        <!ELEMENT synopsis (#PCDATA)>
+        <!ELEMENT annee (#PCDATA)>
+        <!ELEMENT acteur (#PCDATA)>
+        ]>
