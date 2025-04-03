@@ -1,4 +1,6 @@
+<!DOCTYPE db SYSTEM 'film.dtd'>
 <db>
+
     <film idfilm="F001">
         <titre>Mean Streets</titre>
         <realisateur>Martin Scorsese</realisateur>

@@ -1,3 +1,4 @@
+<!DOCTYPE db SYSTEM 'film.dtd'>
 <db>
     <film idfilm="F001">
         <titre>Following</titre>
