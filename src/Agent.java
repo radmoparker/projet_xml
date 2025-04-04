@@ -1,4 +1,11 @@
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.xpath.*;
 import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
@@ -40,9 +47,14 @@ public class  Agent extends Thread {
                 monitor.wait();
                 String m = monitor.getLastQueries();
                 System.out.println(""+name+" lit message : "+m);
+                retrieveQuery("");
                 this.doNotify();
             } catch(InterruptedException e){
                 System.out.println("Agent interrupted !");
+            } catch (XPathExpressionException e) {
+                throw new RuntimeException(e);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
         }
     }
@@ -90,7 +102,8 @@ public class  Agent extends Thread {
 
             if (fichiers != null) {
                 for (File fichier : fichiers) {
-                    openQueryFile(fichier.getName());
+                    System.out.println(fichier.getName());
+                    openQueryFile(queryRepository+"/"+fichier.getName());
                 }
             }
         }
@@ -119,7 +132,7 @@ public class  Agent extends Thread {
      * @throws IOException
      */
     public void openQueryFile(String fileName) throws IOException {
-        File file = new File(getClass().getResource(this.queryRepository+"/"+fileName).getFile());
+        File file = new File(String.valueOf(getClass().getResource(fileName).getFile()));
         FileInputStream fileIS = new FileInputStream(file);
         BufferedReader reader = new BufferedReader(new FileReader(file));
         StringBuilder stringBuilder = new StringBuilder();
@@ -129,5 +142,44 @@ public class  Agent extends Thread {
         }
         String query = stringBuilder.toString().split("<QUERY>")[1].split("</QUERY>")[0];
         this.requetes.add(query);
+    }
+
+    public void retrieveQuery(String query) throws Exception {
+        File bdFile = new File(getClass().getResource(this.bdRepository).getFile());
+        System.out.println(bdFile.getAbsolutePath());
+        Document bd = xmlDocumentLoader(this.bdRepository);
+        XPathFactory xpathfactory = XPathFactory.newInstance();
+
+        XPath xpath = xpathfactory.newXPath();
+        XPathExpression expr = xpath.compile("/db/film[titre='Killers of the Flower Moon']");
+        Object result = expr.evaluate(bd, XPathConstants.NODESET);
+        NodeList nodes = (NodeList) result;
+
+        System.out.println(nodes.toString());
+        for (int i = 0; i < nodes.getLength(); i++) {
+            Node node = nodes.item(i);
+
+            // On vérifie que c’est bien un élément
+            if (node.getNodeType() == Node.ELEMENT_NODE) {
+                Element element = (Element) node;
+                System.out.println("Nom de la balise : " + element.getTagName());
+                System.out.println("Contenu : " + element.getTextContent());
+            }
+        }
+        System.out.println(" fini");
+        
+
+
+
+
+
+    }
+
+    public Document xmlDocumentLoader(String path) throws Exception {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setNamespaceAware(true); // never forget this!
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document doc = builder.parse(getClass().getResource(this.bdRepository).getFile());
+        return doc;
     }
 }
