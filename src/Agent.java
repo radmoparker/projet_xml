@@ -43,6 +43,61 @@ public class  Agent extends Thread {
 
 
    }
+
+
+    private void manageData(ArrayList<Object>  data) throws Exception {
+       if(data == null){
+           System.out.println("Il n'y plus rien à lire ! Aurevoir !");
+
+       }else{
+           String type = data.get(0).toString();
+           switch(type){
+               case "query":
+                   Document documentAnswer =this.manageQuery(data.get(1).toString().toString());
+                   doNotify(documentAnswer);
+
+                   break;
+               case "answer":
+                   this.manageAnswer(data.get(1));
+                   doNotify(1,String.valueOf(data.get(1).hashCode()));
+                   break;
+               case "validation":
+                   System.out.println(name+" : Mes donnés ont été validées ");
+                   if(requetes.size()>0) {
+                       String query = requetes.remove(0);
+                       this.doNotify(query);
+                   }else{
+                       System.out.println(name+" : Je n'ai plus rien à lire  aurevoir !");
+                       this.doNotify(-1,"noDataLeft");
+                   }
+                   break;
+               case "endOfEXchange":
+                   System.out.println(name+" : Je n'ai plus rien à lire  aurevoir !");
+                   break;
+               default:
+                   break;
+           }
+
+       }
+
+
+    }
+
+    private void manageAnswer(Object doc) throws Exception {
+       Document document= (Document) doc;
+       String displayedAnswer = xmlDocumentDisplay(document);
+       System.out.println(name+" : Voici la réponse à ma requête : \n"+displayedAnswer);
+    }
+
+    public Document manageQuery(String query) throws Exception {
+            System.out.println("" + name + " : J'ai reçu la requête : " + query);
+            System.out.println(name+" : Voici la réponse que je vais envoyé : ");
+            Document queryDocument = retrieveQuery(query);
+            System.out.println(xmlDocumentDisplay(queryDocument));
+            System.out.println("\n");
+            return queryDocument;
+
+    }
     public void doWait(){
         synchronized(monitor){
             try{
@@ -50,59 +105,42 @@ public class  Agent extends Thread {
                 monitor.wait();
                 ArrayList<Object>  data = monitor.getLastData();
                 manageData(data);
-                this.doNotify();
             } catch(Exception e){
+
                 System.out.println(e.getMessage());
             }
         }
     }
-
-    private void manageData(ArrayList<Object>  data) throws Exception {
-       String type = data.get(0).toString();
-      switch(type){
-          case "query":
-              this.manageQuery(data.get(1).toString().toString());
-              break;
-          case "answer":
-              this.manageAnswer(data.get(1));
-
-              break;
-          default:
-              break;
-      }
-
-    }
-
-    private void manageAnswer(Object doc) throws Exception {
-       Document document= (Document) doc;
-       xmlDocumentDisplay(document);
-    }
-
-    public void manageQuery(String query) throws Exception {
-        if(query != null){
-            System.out.println("" + name + " A reçu comme requête : " + query);
-            System.out.println("Voici la réponse de la requête : ");
-            retrieveQuery(query);
-            System.out.println("\n\n");
-        }
-    }
-
-    public void doNotify(){
+    public void doNotify(String query){
         synchronized(monitor){
             monitor.notify();
-            System.out.println(this.name+" :");
-            if(requetes.size()>0){
-                String query = requetes.remove(0);
-                monitor.addQuery(query);
 
+            monitor.addQuery(query);
+            System.out.println(this.name+" : j'ai notifié la requête : "+query);
+            this.doWait();
 
-                System.out.println(this.name+" : j'ai notifié la requête : "+query);
+        }
+    }
+    public void doNotify(int code,String validation){
+        synchronized(monitor){
+            monitor.notify();
+            if(code == -1){
+                monitor.notifyEndOfEXchange();
+            }else{
+                System.out.println(this.name+" : Je valide les données  ");
+                monitor.addValidation(validation);
                 this.doWait();
             }
-            else{
-                System.out.println("Je n'ai plus rien à lire  aurevoir !");
 
-            }
+
+        }
+    }
+    public void doNotify(Document document){
+        synchronized(monitor){
+            monitor.notify();
+            this.monitor.addAnswer(document);
+            this.doWait();
+
         }
     }
 
@@ -116,7 +154,12 @@ public class  Agent extends Thread {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            this.doNotify();
+            if(requetes.size()>0) {
+                String query = requetes.remove(0);
+                this.doNotify(query);
+            }else{
+                System.out.println("Je n'ai plus rien à lire  aurevoir !");
+            }
         }
     }
 
@@ -163,21 +206,12 @@ public class  Agent extends Thread {
         Object result = expr.evaluate(bd, XPathConstants.NODESET);
         NodeList nodes = (NodeList) result;
 
-        for (int i = 0; i < nodes.getLength(); i++) {
-            Node node = nodes.item(i);
 
-            if (node.getNodeType() == Node.ELEMENT_NODE) {
-                Element element = (Element) node;
-                System.out.println("Balise : " + element.getTagName());
-                System.out.println("Contenu balise : " + element.getTextContent());
-            }
-        }
         Node filmNode = (Node) expr.evaluate(bd, XPathConstants.NODE);
 
         // Construction du document xml à signer
         Document newDoc = xmlDocumentFromNode(filmNode);
 
-        xmlDocumentDisplay(newDoc);
         return newDoc;
 
 
@@ -193,7 +227,7 @@ public class  Agent extends Thread {
 
 
 
-    public void xmlDocumentDisplay(Document document) throws Exception {
+    public String xmlDocumentDisplay(Document document) throws Exception {
         TransformerFactory tf = TransformerFactory.newInstance();
         Transformer transformer = tf.newTransformer();
         transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
@@ -203,7 +237,7 @@ public class  Agent extends Thread {
         transformer.transform(new DOMSource(document), new StreamResult(writer));
 
         String xmlString = writer.getBuffer().toString();
-        System.out.println(xmlString);
+        return xmlString;
     }
 
 
