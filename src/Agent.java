@@ -93,9 +93,10 @@ public class  Agent extends Thread {
             System.out.println("" + name + " : J'ai reçu la requête : " + query);
             System.out.println(name+" : Voici la réponse que je vais envoyé : ");
             Document queryDocument = retrieveQuery(query);
-            System.out.println(xmlDocumentDisplay(queryDocument));
+            Document wrapedQueryDocument = wrapWithQueryAndResult(queryDocument, query);
+            System.out.println(xmlDocumentDisplay(wrapedQueryDocument));
             System.out.println("\n");
-            return queryDocument;
+            return wrapedQueryDocument;
 
     }
     public void doWait(){
@@ -197,7 +198,6 @@ public class  Agent extends Thread {
     }
 
     public Document retrieveQuery(String query) throws Exception {
-        File bdFile = new File(getClass().getResource(this.bdRepository).getFile());
         Document bd = xmlDocumentLoader(this.bdRepository);
         XPathFactory xpathfactory = XPathFactory.newInstance();
 
@@ -248,6 +248,28 @@ public class  Agent extends Thread {
         Document newDoc = dbuilder.newDocument();
         Node importedNode = newDoc.importNode(node, true);
         newDoc.appendChild(importedNode);
+        return newDoc;
+    }
+
+
+    public static Document wrapWithQueryAndResult(Document filmDocument, String queryText) throws Exception {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document newDoc = builder.newDocument();
+
+        Element rootElement = newDoc.createElement("ANSWER");
+        newDoc.appendChild(rootElement);
+
+        Element queryElement = newDoc.createElement("QUERY");
+        queryElement.setTextContent(queryText);
+        rootElement.appendChild(queryElement);
+
+        Element resultElement = newDoc.createElement("RESULT");
+        rootElement.appendChild(resultElement);
+
+        Node filmNode = newDoc.importNode(filmDocument.getDocumentElement(), true);
+        resultElement.appendChild(filmNode);
+
         return newDoc;
     }
 
