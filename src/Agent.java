@@ -48,17 +48,42 @@ public class  Agent extends Thread {
             try{
                 System.out.println(this.name+" : je  vais attendre");
                 monitor.wait();
-                String query = monitor.getLastQueries();
-                if(query != null){
-                    System.out.println("" + name + " A reçu comme requête : " + query);
-                    System.out.println("Voici la réponse de la requête : ");
-                    retrieveQuery(query);
-                    System.out.println("\n\n");
-                }
+                ArrayList<Object>  data = monitor.getLastData();
+                manageData(data);
                 this.doNotify();
             } catch(Exception e){
                 System.out.println(e.getMessage());
             }
+        }
+    }
+
+    private void manageData(ArrayList<Object>  data) throws Exception {
+       String type = data.get(0).toString();
+      switch(type){
+          case "query":
+              this.manageQuery(data.get(1).toString().toString());
+              break;
+          case "answer":
+              this.manageAnswer(data.get(1));
+
+              break;
+          default:
+              break;
+      }
+
+    }
+
+    private void manageAnswer(Object doc) throws Exception {
+       Document document= (Document) doc;
+       xmlDocumentDisplay(document);
+    }
+
+    public void manageQuery(String query) throws Exception {
+        if(query != null){
+            System.out.println("" + name + " A reçu comme requête : " + query);
+            System.out.println("Voici la réponse de la requête : ");
+            retrieveQuery(query);
+            System.out.println("\n\n");
         }
     }
 
@@ -128,7 +153,7 @@ public class  Agent extends Thread {
         this.requetes.add(query);
     }
 
-    public void retrieveQuery(String query) throws Exception {
+    public Document retrieveQuery(String query) throws Exception {
         File bdFile = new File(getClass().getResource(this.bdRepository).getFile());
         Document bd = xmlDocumentLoader(this.bdRepository);
         XPathFactory xpathfactory = XPathFactory.newInstance();
@@ -149,10 +174,11 @@ public class  Agent extends Thread {
         }
         Node filmNode = (Node) expr.evaluate(bd, XPathConstants.NODE);
 
-        // Nouveau document xml à signer
+        // Construction du document xml à signer
         Document newDoc = xmlDocumentFromNode(filmNode);
 
         xmlDocumentDisplay(newDoc);
+        return newDoc;
 
 
     }
