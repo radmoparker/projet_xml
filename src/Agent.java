@@ -5,6 +5,11 @@ import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.*;
 import java.io.*;
 import java.net.URL;
@@ -113,7 +118,6 @@ public class  Agent extends Thread {
      */
     public void openQueryFile(String fileName) throws Exception {
         File file = new File(String.valueOf(getClass().getResource(fileName).getFile()));
-        FileInputStream fileIS = new FileInputStream(file);
         BufferedReader reader = new BufferedReader(new FileReader(file));
         StringBuilder stringBuilder = new StringBuilder();
         String line = null;
@@ -143,19 +147,50 @@ public class  Agent extends Thread {
                 System.out.println("Contenu balise : " + element.getTextContent());
             }
         }
+        Node filmNode = (Node) expr.evaluate(bd, XPathConstants.NODE);
 
+        // Nouveau document xml à signer
+        Document newDoc = xmlDocumentFromNode(filmNode);
 
-
-
+        xmlDocumentDisplay(newDoc);
 
 
     }
 
     public Document xmlDocumentLoader(String path) throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        factory.setNamespaceAware(true); // never forget this!
+        factory.setNamespaceAware(true);
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(getClass().getResource(this.bdRepository).getFile());
         return doc;
     }
+
+
+
+    public void xmlDocumentDisplay(Document document) throws Exception {
+        TransformerFactory tf = TransformerFactory.newInstance();
+        Transformer transformer = tf.newTransformer();
+        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+        StringWriter writer = new StringWriter();
+        transformer.transform(new DOMSource(document), new StreamResult(writer));
+
+        String xmlString = writer.getBuffer().toString();
+        System.out.println(xmlString);
+    }
+
+
+    public Document xmlDocumentFromNode(Node node) throws Exception {
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        dbf.setNamespaceAware(true);
+        DocumentBuilder dbuilder = dbf.newDocumentBuilder();
+        Document newDoc = dbuilder.newDocument();
+        Node importedNode = newDoc.importNode(node, true);
+        newDoc.appendChild(importedNode);
+        return newDoc;
+    }
+
+
+
 }
