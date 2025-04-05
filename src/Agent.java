@@ -32,10 +32,8 @@ public class  Agent extends Thread {
        this.role = role;
        try {
            xmlQueryFileOpener();
-       } catch (FileNotFoundException e) {
-           throw new RuntimeException(e);
-       } catch (IOException e) {
-           throw new RuntimeException(e);
+       } catch (Exception e) {
+           System.out.println(e.getMessage());
        }
 
 
@@ -45,16 +43,16 @@ public class  Agent extends Thread {
             try{
                 System.out.println(this.name+" : je  vais attendre");
                 monitor.wait();
-                String m = monitor.getLastQueries();
-                System.out.println(""+name+" lit message : "+m);
-                retrieveQuery("");
+                String query = monitor.getLastQueries();
+                if(query != null){
+                    System.out.println("" + name + " A reçu comme requête : " + query);
+                    System.out.println("Voici la réponse de la requête : ");
+                    retrieveQuery(query);
+                    System.out.println("\n\n");
+                }
                 this.doNotify();
-            } catch(InterruptedException e){
-                System.out.println("Agent interrupted !");
-            } catch (XPathExpressionException e) {
-                throw new RuntimeException(e);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
+            } catch(Exception e){
+                System.out.println(e.getMessage());
             }
         }
     }
@@ -62,12 +60,13 @@ public class  Agent extends Thread {
     public void doNotify(){
         synchronized(monitor){
             monitor.notify();
-            System.out.println(this.name+" : je  vais notifier");
+            System.out.println(this.name+" :");
             if(requetes.size()>0){
-                monitor.addQuery(requetes.remove(0));
+                String query = requetes.remove(0);
+                monitor.addQuery(query);
 
 
-                System.out.println(this.name+" : j'ai notifié");
+                System.out.println(this.name+" : j'ai notifié la requête : "+query);
                 this.doWait();
             }
             else{
@@ -84,7 +83,7 @@ public class  Agent extends Thread {
         } else {
             try {
                 Thread.sleep(0); // Assure que agent2 commence à attendre avant la notification
-            } catch (InterruptedException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             this.doNotify();
@@ -93,45 +92,26 @@ public class  Agent extends Thread {
 
     /**
      * Foncrion Enregistre toutes les requetes du dossier correspondant aux requetes de l'agent
-     * @throws IOException
+     * @throws Exception
      */
-    public void xmlQueryFileOpener() throws IOException {
+    public void xmlQueryFileOpener() throws Exception {
         File dossierQuery = new File(getClass().getResource(this.queryRepository).getFile());
         if (dossierQuery.exists() && dossierQuery.isDirectory()) {
             File[] fichiers = dossierQuery.listFiles();
-
             if (fichiers != null) {
                 for (File fichier : fichiers) {
-                    System.out.println(fichier.getName());
                     openQueryFile(queryRepository+"/"+fichier.getName());
                 }
             }
         }
-
-
-
-    /*
-        FileInputStream fileIS = new FileInputStream(this.getFile());
-        DocumentBuilderFactory builderFactory = newSecureDocumentBuilderFactory();
-        DocumentBuilder builder = builderFactory.newDocumentBuilder();
-        Document xmlDocument = builder.parse(fileIS);
-        XPath xPath = XPathFactory.newInstance().newXPath();
-        String expression = "/Tutorials/Tutorial";
-        NodeList nodeList = (NodeList) xPath.compile(expression).evaluate(xmlDocument, XPathConstants.NODESET);
-
-
-        test ne focntionne pas :         FileInputStream fileIS = new FileInputStream(file.getAbsoluteFile());
-
-     */
-
     }
 
     /**
      * Fonction enregistre la requete correspondant au nom du fichier donnée en paramètre
      * @param fileName
-     * @throws IOException
+     * @throws Exception
      */
-    public void openQueryFile(String fileName) throws IOException {
+    public void openQueryFile(String fileName) throws Exception {
         File file = new File(String.valueOf(getClass().getResource(fileName).getFile()));
         FileInputStream fileIS = new FileInputStream(file);
         BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -146,28 +126,24 @@ public class  Agent extends Thread {
 
     public void retrieveQuery(String query) throws Exception {
         File bdFile = new File(getClass().getResource(this.bdRepository).getFile());
-        System.out.println(bdFile.getAbsolutePath());
         Document bd = xmlDocumentLoader(this.bdRepository);
         XPathFactory xpathfactory = XPathFactory.newInstance();
 
         XPath xpath = xpathfactory.newXPath();
-        XPathExpression expr = xpath.compile("/db/film[titre='Killers of the Flower Moon']");
+        XPathExpression expr = xpath.compile(query);
         Object result = expr.evaluate(bd, XPathConstants.NODESET);
         NodeList nodes = (NodeList) result;
 
-        System.out.println(nodes.toString());
         for (int i = 0; i < nodes.getLength(); i++) {
             Node node = nodes.item(i);
 
-            // On vérifie que c’est bien un élément
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element element = (Element) node;
-                System.out.println("Nom de la balise : " + element.getTagName());
-                System.out.println("Contenu : " + element.getTextContent());
+                System.out.println("Balise : " + element.getTagName());
+                System.out.println("Contenu balise : " + element.getTextContent());
             }
         }
-        System.out.println(" fini");
-        
+
 
 
 
