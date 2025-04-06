@@ -24,12 +24,11 @@ public class Main {
 
         PublicKey publicKeyB = kpB.getPublic();
         PrivateKey privateKeyB = kpB.getPrivate();
-        System.out.println(kpA.getPrivate()==privateKeyA && kpA.getPublic()==publicKeyA && kpB.getPrivate()==privateKeyB && kpB.getPublic()==publicKeyB);
 
 
         ExangeDataMonitor monitor = new ExangeDataMonitor();
-        Agent agent1 = new Agent(monitor,"ressources/bd_xml_1.xml","requetes_1","batman",null,blue,privateKeyA,publicKeyB);
-        Agent agent2 = new Agent(monitor,"ressources/bd_xml_2.xml","requetes_2","robin","waiter",yellow,privateKeyB,publicKeyA);
+        Agent agent1 = new Agent(monitor,"ressources/bd_xml_1.xml","requetes_1","BATMAN",null,blue,privateKeyA,publicKeyB);
+        Agent agent2 = new Agent(monitor,"ressources/bd_xml_2.xml","requetes_2","ROBIN","waiter",yellow,privateKeyB,publicKeyA);
         agent2.start();
         agent1.start();
 

@@ -4,6 +4,14 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import javax.xml.crypto.dsig.*;
+import javax.xml.crypto.dsig.dom.DOMSignContext;
+import javax.xml.crypto.dsig.dom.DOMValidateContext;
+import javax.xml.crypto.dsig.keyinfo.KeyInfo;
+import javax.xml.crypto.dsig.keyinfo.KeyInfoFactory;
+import javax.xml.crypto.dsig.keyinfo.KeyValue;
+import javax.xml.crypto.dsig.spec.C14NMethodParameterSpec;
+import javax.xml.crypto.dsig.spec.TransformParameterSpec;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
@@ -16,6 +24,7 @@ import java.io.*;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /*IMPORTANT : documentation pour échange de donnée entre threadjava :
  * https://jenkov.com/tutorials/java-concurrency/thread-signaling.html
@@ -61,7 +70,8 @@ public class  Agent extends Thread {
             switch(type){
                 //Ici on répond à une requête
                 case "query":
-                    Document documentAnswer =this.manageQuery((Document) data.get(1));
+                    ArrayList<Document> documentAnswer =this.manageQuery((Document) data.get(2),(Document) data.get(1));
+
                     doNotify(documentAnswer);
 
                     break;
@@ -72,11 +82,12 @@ public class  Agent extends Thread {
                     break;
                 //Ici on consulte la validation de notre réponse par l'interlocuteur
                 case "validation":
-                    System.out.println(color+name+" : Mes donnés ont été validées ");
+                    System.out.println(color+name+" : Mes données ont été validées ");
                     if(requetes.size()>0) {
                         Document query = requetes.remove(0);
-                        Document signedQuery = signDocument(query);
-                        this.doNotify(signedQuery,0);
+                        Document signedQuery = signDocument(copyXmlDocument(query),"REQUETE");
+                        System.out.println(color+this.name+" : je vais notifié la REQUETE : \n"+xmlDocumentDisplay(query));
+                        this.doNotify(query,signedQuery,0);
                     }else{
                         System.out.println(color+name+" : Je n'ai plus rien à lire  aurevoir !");
                         this.doNotify(-1,"noDataLeft");
@@ -91,7 +102,40 @@ public class  Agent extends Thread {
         }
     }
 
-    public Document signDocument(Document document) {
+    /**
+     * lA SIGNATURE DU DOCUMENT EST FAITE À PARTIR DU STANDARD W3C DISPONIBLE VERS CE LIEN :
+     * https://docs.oracle.com/javase/8/docs/technotes/guides/security/xmldsig/XMLDigitalSignature.html
+     * @param document  Document à signer
+     * @return le document signé
+     */
+    public Document signDocument(Document document,String type) throws Exception{
+        DOMSignContext dsc = new DOMSignContext(signatureKey, document.getDocumentElement());
+        XMLSignatureFactory fac = XMLSignatureFactory.getInstance("DOM");
+        Reference ref = fac.newReference
+                ("", fac.newDigestMethod(DigestMethod.SHA256, null),
+                        Collections.singletonList
+                                (fac.newTransform(Transform.ENVELOPED,
+                                        (TransformParameterSpec) null)), null, null);
+        //Singnature info object : l'objet qui va être signé
+        SignedInfo si = fac.newSignedInfo
+                (fac.newCanonicalizationMethod
+                                (CanonicalizationMethod.INCLUSIVE_WITH_COMMENTS,
+                                        (C14NMethodParameterSpec) null),
+                        fac.newSignatureMethod("http://www.w3.org/2009/xmldsig11#dsa-sha256", null),
+                        Collections.singletonList(ref));
+        //Va contenir les infos pour récupéré la clé
+        KeyInfoFactory kif = fac.getKeyInfoFactory();
+        //Création de la valeur de la clé
+        KeyValue kv = kif.newKeyValue(validationKey);
+        KeyInfo ki = kif.newKeyInfo(Collections.singletonList(kv));
+
+        //Création de l'objet XMLSignature ,  contient les objets SignedInfo and KeyInfo crées plus haut:
+        XMLSignature signature = fac.newXMLSignature(si, ki);
+
+        //Génération de la signature
+        signature.sign(dsc);
+        System.out.println(color+name+" Voici la "+type+" signée  : \n"+xmlDocumentDisplay(document));
+
         return document;
     }
 
@@ -102,24 +146,46 @@ public class  Agent extends Thread {
             Document document= (Document) doc;
             String displayedAnswer = xmlDocumentDisplay(document);
             System.out.println(color+name+" : Voici la réponse à ma requête : \n"+displayedAnswer);
-            verifySignature(doc,"Answer");
+            verifySignature(document,"RÉPONSE");
         }
     }
 
-    public void verifySignature(Object doc,String type) {
-        System.out.println(color+this.name+" : Vérification de la signature "+type+" : ");
+    public void verifySignature(Object document,String type) throws Exception {
+        System.out.println(color+this.name+" : Vérification de la signature de la "+type+"  ");
+
+            //Instantiation du document à signer
+            Document doc = (Document) document;
+
+            NodeList nl = doc.getElementsByTagNameNS(XMLSignature.XMLNS, "Signature");
+            if (nl.getLength() == 0) {
+                throw new Exception(color+name+" : Le document n'a pas de signature !");
+            }
+            //Context pour valider la signature
+            DOMValidateContext valContext = new DOMValidateContext(validationKey, nl.item(0));
+            //Création d'un objet signature à parrtir de la signature
+            XMLSignatureFactory factory = XMLSignatureFactory.getInstance("DOM");
+
+            XMLSignature signature = factory.unmarshalXMLSignature(valContext);
+
+            //Validation de la signature
+            boolean coreValidity = signature.validate(valContext);
+            System.out.println(color+name+" : Validation de la signature : "+(coreValidity?"Signature validé avec ma clé publique ":"Signature refusé avec ma clé publique"));
     }
 
-    public Document manageQuery(Document documentQuery) throws Exception {
-        String xpathQuery = extractXPathQuery(documentQuery);
-        System.out.println(color+name + " : J'ai reçu la requête : \n" + xmlDocumentDisplay(documentQuery));
-        verifySignature(documentQuery,"Query");
-        System.out.println(color+name+" : Voici la réponse que je vais envoyé : ");
+    public ArrayList<Document> manageQuery(Document query, Document signedQueryDocument) throws Exception {
+        String xpathQuery = extractXPathQuery(query);
+        System.out.println(color+name + " : J'ai reçu la REQUETE : \n" + xmlDocumentDisplay(signedQueryDocument));
+        verifySignature(signedQueryDocument,"REQUETE");
+        System.out.println(color+name+" : Voici la RÉPONSE que je vais envoyé : ");
         Document queryDocument = retrieveQuery(xpathQuery);
-        Document wrapedQueryDocument = wrapWithQueryAndResult(queryDocument, xpathQuery);
-        Document signedQueryDocument = signDocument(wrapedQueryDocument);
-        System.out.println(color+xmlDocumentDisplay(signedQueryDocument)+"\n");
-        return wrapedQueryDocument;
+        System.out.println(color+xmlDocumentDisplay(queryDocument)+"\n");
+
+        Document wrapedResultDocument = wrapWithQueryAndResult(queryDocument, xpathQuery);
+        Document signedResultDocument = signDocument(wrapedResultDocument,"RÉPONSE");
+        ArrayList<Document> answers = new ArrayList<>();
+        answers.add(signedResultDocument);
+        answers.add(wrapedResultDocument);
+        return answers;
 
     }
     public void doWait(){
@@ -135,12 +201,13 @@ public class  Agent extends Thread {
             }
         }
     }
-    public void doNotify(Document query,int code) throws Exception {
+    public void doNotify(Document query,Document signedQuery,int code) throws Exception {
         synchronized(monitor){
             monitor.notify();
 
-            monitor.addQuery(query);
-            System.out.println(color+this.name+" : j'ai notifié la requête : \n"+xmlDocumentDisplay(query));
+            monitor.addQuery(signedQuery,query);
+
+
             this.doWait();
 
         }
@@ -159,10 +226,10 @@ public class  Agent extends Thread {
 
         }
     }
-    public void doNotify(Document document){
+    public void doNotify(ArrayList<Document> documents){
         synchronized(monitor){
             monitor.notify();
-            this.monitor.addAnswer(document);
+            this.monitor.addAnswer(documents.get(0),documents.get(1));
             this.doWait();
 
         }
@@ -181,7 +248,9 @@ public class  Agent extends Thread {
             if(requetes.size()>0) {
                 Document query = requetes.remove(0);
                 try {
-                    this.doNotify(query,0);
+                    System.out.println(color+this.name+" : je vais notifié la REQUETE : \n"+xmlDocumentDisplay(query));
+                    Document signedQuery = signDocument(copyXmlDocument(query),"REQUETE");
+                    this.doNotify(query,signedQuery,0);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
@@ -322,6 +391,19 @@ public class  Agent extends Thread {
         return newDoc;
     }
 
+    public static Document copyXmlDocument(Document document) {
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document newDoc = builder.newDocument();
 
+            Node copiedNode = newDoc.importNode(document.getDocumentElement(), true);
+            newDoc.appendChild(copiedNode);
 
+            return newDoc;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

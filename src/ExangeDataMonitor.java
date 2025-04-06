@@ -1,5 +1,6 @@
 import org.w3c.dom.Document;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +11,8 @@ public class ExangeDataMonitor {
     private ArrayList<Document> query = new ArrayList<Document>();
 
     private ArrayList<String> symbol = new ArrayList<String>();
+    private ArrayList<Document> signedQueries = new ArrayList<Document>();
+    private ArrayList<Document> signedAnswer = new ArrayList<Document>();
 
 
     public ArrayList<Object> getLastData(){
@@ -21,6 +24,7 @@ public class ExangeDataMonitor {
         switch(symb){
             case "query":
                 rep.add("query");
+                rep.add(signedQueries.removeLast());
                 rep.add(query.removeLast());
                 break;
             case "answer":
@@ -41,12 +45,14 @@ public class ExangeDataMonitor {
 
         return rep;
     }
-    public void addQuery(Document query){
+    public void addQuery(Document signedQuery,Document query){
         this.query.add(query);
         this.symbol.add("query");
+        this.signedQueries.add(signedQuery);
     }
-    public void addAnswer(Document answer){
+    public void addAnswer(Document signedAnswer, Document answer){
         this.answer.add(answer);
+        this.signedAnswer.add(signedAnswer);
         this.symbol.add("answer");
 
     }
