@@ -1,0 +1,69 @@
+REAMDME
+EXECUTION DU PROJET
+    -Ouvrir un terminal dans le dossier out/artifact/projet_xml_jar
+    -taper la commande : java -jar projet_xml.jar
+
+    Vous observez l'échange entre les 2 agents
+
+
+CONTENU DU PROJET
+    LES 2 BASE DE DONNÉES:
+        src/resources/requete_1.xml
+        src/resources/requete_1.xml
+
+    LES 2 DOSSIERS CONTENANTS CHACUNS 5 REQUÊTES (query_i.xml):
+        src/resources/requetes_1/
+        src/resources/requetes_2/
+
+    UN FICHIER CONTENANT TOUTES LES REQUÊTES SIGNÉES DURANT L'ÉCHANGE:
+        src/resources/requetes_signees.xml
+
+    UN FICHIER CONTENANT TOUTES LES RÉPONSES SIGNÉES DURANT L'ÉCHANGE:
+        src/resources/reponses_signees.xml
+
+    LE CODE SOURCE CONTENANT LES 3 FICHIERS JAVA:
+        src/Main.java : l'instanciation des clés à lieu ici, ainsi que celles des 2 threads (Agent.java)
+        src/ExangeDataMonitor.java : c'est l'objet commun au 2 thread via lequel ils vont échangé
+        src/Agent.java : Le code principal a lieu ici (signature validation signature
+
+
+QUELLE FONCTION EST UTILISÉE POUR SIGNER ?
+    C'est la fonction signDocument(Document document,String type), chaque étape est commentée.
+    Le tuto est disponible à : https://docs.oracle.com/javase/8/docs/technotes/guides/security/xmldsig/XMLDigitalSignature.html
+
+QUELLE FONCTION EST UTILISÉE POUR VALIDER UNE SIGNATURE ?
+    C'est la fonction verifySignature(Object document,String type), chaque étape est commentée.
+    Le tuto est disponible à : https://docs.oracle.com/javase/8/docs/technotes/guides/security/xmldsig/XMLDigitalSignature.html
+
+OU À LIEU L'ÉCHANGE DE CLÉS :
+    Dans le main.java , les clés sont générée et partagé entre les 2 agents
+    Le tuto est disponible à : https://docs.oracle.com/javase/8/docs/technotes/guides/security/xmldsig/XMLDigitalSignature.html
+
+
+
+COMMENT À LIEU L'ÉCHANGE ENTRE AGENT:
+
+    L'agent 1 récupère sa requête
+    L'agent 1 signe sa requête
+    L'agent 1 envoie sa requête
+
+    L'agent 2 vérifie la signature de la requête reçu
+    L'agent 2 récupère la réponse de la requête reçu
+    L'agent 2 signe la réponse de la requête reçu
+    L'agent 2 envoi la réponse signé
+
+    L'agent 1 récupère la réponse signée
+    L'agent 1 vérifie la signature la réponse recu
+    L'agent 1 confireme la validation de la signature
+
+    c'est autour de l'agent 2 d'envoyé sa requête une fois confiramation que sa réponse est valide
+
+
+
+NOTE:
+    Chaque agent à une couleur dans le terminal pour mieux dicerner les échanges
+
+
+
+
+

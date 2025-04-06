@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Objet central d'echange entre thread
+ */
 public class ExangeDataMonitor {
     private List<String> validation = new ArrayList<>() {
     };
@@ -14,7 +17,10 @@ public class ExangeDataMonitor {
     private ArrayList<Document> signedQueries = new ArrayList<Document>();
     private ArrayList<Document> signedAnswer = new ArrayList<Document>();
 
-
+    /**
+     * Récupération haut de la pile = dernier échange
+     * @return
+     */
     public ArrayList<Object> getLastData(){
         if( symbol.isEmpty()){
             return null;
@@ -45,24 +51,43 @@ public class ExangeDataMonitor {
 
         return rep;
     }
+
+    /**
+     * aJOUT REQUETE
+     * @param signedQuery
+     * @param query
+     */
     public void addQuery(Document signedQuery,Document query){
         this.query.add(query);
         this.symbol.add("query");
         this.signedQueries.add(signedQuery);
     }
+
+    /**Ajout reponse
+     *
+     * @param signedAnswer
+     * @param answer
+     */
     public void addAnswer(Document signedAnswer, Document answer){
         this.answer.add(answer);
         this.signedAnswer.add(signedAnswer);
         this.symbol.add("answer");
 
     }
+
+    /**Ajout validation
+     *
+     * @param validation
+     */
     public void addValidation(String validation){
         this.validation.add(validation);
         this.symbol.add("validation");
 
     }
 
-
+    /**
+     * Fin d'échange
+     */
     public void notifyEndOfEXchange() {
         this.symbol.add("endOfEXchange");
     }

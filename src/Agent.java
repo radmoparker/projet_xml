@@ -68,6 +68,11 @@ public class  Agent extends Thread {
     }
 
 
+    /**
+     * Traite toute les réponse recu (validation,requete,reponse)
+     * @param data
+     * @throws Exception
+     */
     private void manageData(ArrayList<Object>  data) throws Exception {
         if(data == null){
             System.out.println(this.color+this.name+"Il n'y plus rien à lire ! Aurevoir !");
@@ -157,6 +162,13 @@ public class  Agent extends Thread {
         }
     }
 
+    /**
+     * FONCTION UTILISÉE POUR VÉRIFIÉ LA SIGNATURE D'UN DOCUMENT AVEC NOTRE CLÉ PUBLIQUE
+     * Tuto disponible : https://docs.oracle.com/javase/8/docs/technotes/guides/security/xmldsig/XMLDigitalSignature.html
+     * @param document Document
+     * @param type Type de document (query/reponse)
+     * @throws Exception
+     */
     public void verifySignature(Object document,String type) throws Exception {
         System.out.println(color+this.name+" : Vérification de la signature de la "+type+"  ");
 
@@ -179,6 +191,13 @@ public class  Agent extends Thread {
             System.out.println(color+name+" : Validation de la signature : "+(coreValidity?"Signature validé avec ma clé publique ":"Signature refusé avec ma clé publique"));
     }
 
+    /**
+     * Gère les requête recu
+     * @param query
+     * @param signedQueryDocument
+     * @return
+     * @throws Exception
+     */
     public ArrayList<Document> manageQuery(Document query, Document signedQueryDocument) throws Exception {
         String xpathQuery = extractXPathQuery(query);
         System.out.println(color+name + " : J'ai reçu la REQUETE : \n" + xmlDocumentDisplay(signedQueryDocument));
@@ -195,6 +214,10 @@ public class  Agent extends Thread {
         return answers;
 
     }
+
+    /**
+     * Fonction attend une communication de l'autre agent
+     */
     public void doWait(){
         synchronized(monitor){
             try{
@@ -208,6 +231,14 @@ public class  Agent extends Thread {
             }
         }
     }
+
+    /**
+     * Notify l'autre agent
+     * @param query
+     * @param signedQuery
+     * @param code
+     * @throws Exception
+     */
     public void doNotify(Document query,Document signedQuery,int code) throws Exception {
         synchronized(monitor){
             monitor.notify();
@@ -219,6 +250,12 @@ public class  Agent extends Thread {
 
         }
     }
+
+    /**
+     * Notify l'autre agent
+     * @param code
+     * @param validation
+     */
     public void doNotify(int code,String validation){
         synchronized(monitor){
             monitor.notify();
@@ -233,6 +270,9 @@ public class  Agent extends Thread {
 
         }
     }
+    /**public void doNotify(ArrayList<Document> documents){
+     * Notify l'autre agent
+     */
     public void doNotify(ArrayList<Document> documents){
         synchronized(monitor){
             monitor.notify();
@@ -242,6 +282,9 @@ public class  Agent extends Thread {
         }
     }
 
+    /**
+     * Start du thread
+     */
     @Override
     public void run() {
         if ("waiter".equals(role)) {
@@ -299,6 +342,13 @@ public class  Agent extends Thread {
         String query = stringBuilder.toString().split("<QUERY>")[1].split("</QUERY>")[0];
 
     }
+
+    /**
+     * Récupération d'une query
+     * @param queryURL
+     * @return
+     * @throws Exception
+     */
     public Document getQueryDocument(URL queryURL) throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -307,6 +357,12 @@ public class  Agent extends Thread {
         this.requetes.add(document);
         return document;
     }
+
+    /**
+     * Extraction d'une query String
+     * @param xmlQuery
+     * @return
+     */
     public String extractXPathQuery(Document xmlQuery) {
         NodeList queryNodes = xmlQuery.getElementsByTagName("QUERY");
         Element queryElement = (Element) queryNodes.item(0);
@@ -315,6 +371,12 @@ public class  Agent extends Thread {
 
     }
 
+    /**
+     * Récupération requête
+     * @param query
+     * @return
+     * @throws Exception
+     */
     public Document retrieveQuery(String query) throws Exception {
         Document bd = null;
         try{
@@ -342,6 +404,11 @@ public class  Agent extends Thread {
 
     }
 
+    /**
+     * Chargement du dossier de bd
+     * @return
+     * @throws Exception
+     */
     public Document xmlDocumentLoader() throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         factory.setNamespaceAware(true);
@@ -361,7 +428,12 @@ public class  Agent extends Thread {
     }
 
 
-
+    /**
+     * Affichage d'un Document xml
+     * @param document
+     * @return
+     * @throws Exception
+     */
     public String xmlDocumentDisplay(Document document) throws Exception {
         TransformerFactory tf = TransformerFactory.newInstance();
         Transformer transformer = tf.newTransformer();
@@ -375,7 +447,12 @@ public class  Agent extends Thread {
         return xmlString;
     }
 
-
+    /**
+     * Création d'un xml depuis un node
+     * @param node
+     * @return
+     * @throws Exception
+     */
     public Document xmlDocumentFromNode(Node node) throws Exception {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setNamespaceAware(true);
@@ -386,7 +463,13 @@ public class  Agent extends Thread {
         return newDoc;
     }
 
-
+    /**
+     * Enveloppe d'un xml
+     * @param filmDocument
+     * @param queryText
+     * @return
+     * @throws Exception
+     */
     public  Document wrapWithQueryAndResult(Document filmDocument, String queryText) throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -408,6 +491,11 @@ public class  Agent extends Thread {
         return newDoc;
     }
 
+    /**
+     * Copie d'un xml
+     * @param document
+     * @return
+     */
     public static Document copyXmlDocument(Document document) {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
