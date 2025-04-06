@@ -1,4 +1,4 @@
-<!DOCTYPE db SYSTEM 'film.dtd'>
+<?xml version="1.0" encoding="UTF-8"?>
 <db>
     <film idfilm="F001">
         <titre>Mean Streets</titre>

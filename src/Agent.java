@@ -21,6 +21,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.*;
 import java.io.*;
+import java.net.URL;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ public class  Agent extends Thread {
     private final String color;
     private final PrivateKey signatureKey;
     private final PublicKey validationKey;
+    private  Document bd;
 
     private ArrayList<Document> requetes = new ArrayList<Document>();
 
@@ -53,6 +55,11 @@ public class  Agent extends Thread {
         this.color = color;
         this.signatureKey = signatureKey;
         this.validationKey = validationKey;
+        try {
+            this.bd = xmlDocumentLoader();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         try {
             xmlQueryFileOpener();
         } catch (Exception e) {
@@ -265,13 +272,13 @@ public class  Agent extends Thread {
      * @throws Exception
      */
     public void xmlQueryFileOpener() throws Exception {
-        File dossierQuery = new File(getClass().getResource(this.queryRepository).getFile());
-        if (dossierQuery.exists() && dossierQuery.isDirectory()) {
-            File[] fichiers = dossierQuery.listFiles();
-            if (fichiers != null) {
-                for (File fichier : fichiers) {
-                    getQueryDocument(queryRepository+"/"+fichier.getName());
-                }
+        for (int i = 1; i <= 5; i++) {
+            String queryPath = this.queryRepository + "/query_" + i + ".xml";
+            URL queryURL = getClass().getResource(queryPath);
+            if (queryURL != null) {
+                getQueryDocument(queryURL);
+            } else {
+                System.err.println("Fichier non trouvé: " + queryPath);
             }
         }
     }
@@ -292,10 +299,10 @@ public class  Agent extends Thread {
         String query = stringBuilder.toString().split("<QUERY>")[1].split("</QUERY>")[0];
 
     }
-    public Document getQueryDocument(String name) throws Exception {
+    public Document getQueryDocument(URL queryURL) throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
-        Document document = builder.parse(new File(getClass().getResource(name).getFile()));
+        Document document = builder.parse(queryURL.openStream()); // Utilisation de l'InputStream de l'URL
         document.getDocumentElement().normalize();
         this.requetes.add(document);
         return document;
@@ -339,8 +346,18 @@ public class  Agent extends Thread {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         factory.setNamespaceAware(true);
         DocumentBuilder builder = factory.newDocumentBuilder();
-        Document doc = builder.parse(new File(getClass().getResource(this.bdRepository).getFile()));
+
+        InputStream inputStream = getClass().getResourceAsStream(this.bdRepository);
+
+        if (inputStream == null) {
+            throw new FileNotFoundException("Ressource non trouvée : " + this.bdRepository);
+        }
+
+        Document doc = builder.parse(inputStream);
+        inputStream.close();
+
         return doc;
+
     }
 
 
