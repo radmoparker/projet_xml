@@ -7,7 +7,7 @@ public class ExangeDataMonitor {
     private List<String> validation = new ArrayList<>() {
     };
     private ArrayList<Document> answer = new ArrayList<Document>();
-    private ArrayList<String> query = new ArrayList<String>();
+    private ArrayList<Document> query = new ArrayList<Document>();
 
     private ArrayList<String> symbol = new ArrayList<String>();
 
@@ -41,7 +41,7 @@ public class ExangeDataMonitor {
 
         return rep;
     }
-    public void addQuery(String query){
+    public void addQuery(Document query){
         this.query.add(query);
         this.symbol.add("query");
     }

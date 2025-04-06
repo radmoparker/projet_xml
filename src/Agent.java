@@ -1,3 +1,4 @@
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -12,15 +13,15 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.*;
 import java.io.*;
-import java.net.URL;
 import java.util.ArrayList;
 
-/*doc pour echange de donnée entre threadjava :
-* https://jenkov.com/tutorials/java-concurrency/thread-signaling.html
-* Permet de lier des thread par un point central qui est l'objet commun
-* */
+/*IMPORTANT : documentation pour échange de donnée entre threadjava :
+ * https://jenkov.com/tutorials/java-concurrency/thread-signaling.html
+ * Permet de lier des thread par un point central qui est l'objet commun
+ * */
 public class  Agent extends Thread {
-    private ArrayList<String> requetes = new ArrayList<String>();
+    private final String color;
+    private ArrayList<Document> requetes = new ArrayList<Document>();
 
     private  String queryRepository;
     private  String bdRepository;
@@ -29,80 +30,92 @@ public class  Agent extends Thread {
     private String name;
     private String role;
 
-   public Agent(ExangeDataMonitor monitor,String bdRepository,String queryRepository,String name,String role) {
-       this.monitor = monitor;
-       this.bdRepository = bdRepository;
-       this.queryRepository = queryRepository;
-       this.name = name;
-       this.role = role;
-       try {
-           xmlQueryFileOpener();
-       } catch (Exception e) {
-           System.out.println(e.getMessage());
-       }
+    public Agent(ExangeDataMonitor monitor,String bdRepository,String queryRepository,String name,String role,String color) {
+        this.monitor = monitor;
+        this.bdRepository = bdRepository;
+        this.queryRepository = queryRepository;
+        this.name = name;
+        this.role = role;
+        this.color = color;
+        try {
+            xmlQueryFileOpener();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
 
-   }
+    }
 
 
     private void manageData(ArrayList<Object>  data) throws Exception {
-       if(data == null){
-           System.out.println("Il n'y plus rien à lire ! Aurevoir !");
+        if(data == null){
+            System.out.println(this.color+this.name+"Il n'y plus rien à lire ! Aurevoir !");
 
-       }else{
-           String type = data.get(0).toString();
-           switch(type){
-               case "query":
-                   Document documentAnswer =this.manageQuery(data.get(1).toString().toString());
-                   doNotify(documentAnswer);
+        }else{
+            String type = data.get(0).toString();
+            switch(type){
+                case "query":
 
-                   break;
-               case "answer":
-                   this.manageAnswer(data.get(1));
-                   doNotify(1,String.valueOf(data.get(1).hashCode()));
-                   break;
-               case "validation":
-                   System.out.println(name+" : Mes donnés ont été validées ");
-                   if(requetes.size()>0) {
-                       String query = requetes.remove(0);
-                       this.doNotify(query);
-                   }else{
-                       System.out.println(name+" : Je n'ai plus rien à lire  aurevoir !");
-                       this.doNotify(-1,"noDataLeft");
-                   }
-                   break;
-               case "endOfEXchange":
-                   System.out.println(name+" : Je n'ai plus rien à lire  aurevoir !");
-                   break;
-               default:
-                   break;
-           }
+                    Document documentAnswer =this.manageQuery((Document) data.get(1));
+                    doNotify(documentAnswer);
 
-       }
+                    break;
+                case "answer":
+                    this.manageAnswer(data.get(1));
+                    doNotify(1,String.valueOf(data.get(1).hashCode()));
+                    break;
+                case "validation":
+                    System.out.println(color+name+" : Mes donnés ont été validées ");
+                    if(requetes.size()>0) {
+                        Document query = requetes.remove(0);
+                        this.doNotify(query,0);
+                    }else{
+                        System.out.println(color+name+" : Je n'ai plus rien à lire  aurevoir !");
+                        this.doNotify(-1,"noDataLeft");
+                    }
+                    break;
+                case "endOfEXchange":
+                    System.out.println(color+name+" : Je n'ai plus rien à lire  aurevoir !");
+                    break;
+                default:
+                    break;
+            }
+
+        }
 
 
     }
 
     private void manageAnswer(Object doc) throws Exception {
-       Document document= (Document) doc;
-       String displayedAnswer = xmlDocumentDisplay(document);
-       System.out.println(name+" : Voici la réponse à ma requête : \n"+displayedAnswer);
+        if(doc == null){
+            System.out.println(color+this.name+" : Ma signature Lors de l'envoie de la requête a été refusé !");
+        }else{
+            Document document= (Document) doc;
+            String displayedAnswer = xmlDocumentDisplay(document);
+            System.out.println(color+name+" : Voici la réponse à ma requête : \n"+displayedAnswer);
+            verifySignature(doc,"Answer");
+        }
     }
 
-    public Document manageQuery(String query) throws Exception {
-            System.out.println("" + name + " : J'ai reçu la requête : " + query);
-            System.out.println(name+" : Voici la réponse que je vais envoyé : ");
-            Document queryDocument = retrieveQuery(query);
-            Document wrapedQueryDocument = wrapWithQueryAndResult(queryDocument, query);
-            System.out.println(xmlDocumentDisplay(wrapedQueryDocument));
-            System.out.println("\n");
-            return wrapedQueryDocument;
+    public void verifySignature(Object doc,String type) {
+        System.out.println(color+this.name+" : Vérification de la signature "+type+" : ");
+    }
+
+    public Document manageQuery(Document documentQuery) throws Exception {
+        String xpathQuery = extractXPathQuery(documentQuery);
+        System.out.println(color+name + " : J'ai reçu la requête : \n" + xmlDocumentDisplay(documentQuery));
+        verifySignature(documentQuery,"Query");
+        System.out.println(color+name+" : Voici la réponse que je vais envoyé : ");
+        Document queryDocument = retrieveQuery(xpathQuery);
+        Document wrapedQueryDocument = wrapWithQueryAndResult(queryDocument, xpathQuery);
+        System.out.println(color+xmlDocumentDisplay(wrapedQueryDocument)+"\n");
+        return wrapedQueryDocument;
 
     }
     public void doWait(){
         synchronized(monitor){
             try{
-                System.out.println(this.name+" : je  vais attendre");
+                System.out.println(color+this.name+" : je  vais attendre\n");
                 monitor.wait();
                 ArrayList<Object>  data = monitor.getLastData();
                 manageData(data);
@@ -112,12 +125,12 @@ public class  Agent extends Thread {
             }
         }
     }
-    public void doNotify(String query){
+    public void doNotify(Document query,int code) throws Exception {
         synchronized(monitor){
             monitor.notify();
 
             monitor.addQuery(query);
-            System.out.println(this.name+" : j'ai notifié la requête : "+query);
+            System.out.println(color+this.name+" : j'ai notifié la requête : \n"+xmlDocumentDisplay(query));
             this.doWait();
 
         }
@@ -128,7 +141,7 @@ public class  Agent extends Thread {
             if(code == -1){
                 monitor.notifyEndOfEXchange();
             }else{
-                System.out.println(this.name+" : Je valide les données  ");
+                System.out.println(color+this.name+" : Je valide les données  ");
                 monitor.addValidation(validation);
                 this.doWait();
             }
@@ -156,10 +169,14 @@ public class  Agent extends Thread {
                 e.printStackTrace();
             }
             if(requetes.size()>0) {
-                String query = requetes.remove(0);
-                this.doNotify(query);
+                Document query = requetes.remove(0);
+                try {
+                    this.doNotify(query,0);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }else{
-                System.out.println("Je n'ai plus rien à lire  aurevoir !");
+                System.out.println(color+name+"Je n'ai plus rien à lire  aurevoir !");
             }
         }
     }
@@ -174,7 +191,7 @@ public class  Agent extends Thread {
             File[] fichiers = dossierQuery.listFiles();
             if (fichiers != null) {
                 for (File fichier : fichiers) {
-                    openQueryFile(queryRepository+"/"+fichier.getName());
+                    getQueryDocument(queryRepository+"/"+fichier.getName());
                 }
             }
         }
@@ -182,11 +199,11 @@ public class  Agent extends Thread {
 
     /**
      * Fonction enregistre la requete correspondant au nom du fichier donnée en paramètre
-     * @param fileName
+     * @param name
      * @throws Exception
      */
-    public void openQueryFile(String fileName) throws Exception {
-        File file = new File(String.valueOf(getClass().getResource(fileName).getFile()));
+    public void openQueryFile(String name) throws Exception {
+        File file = new File(String.valueOf(getClass().getResource(name).getFile()));
         BufferedReader reader = new BufferedReader(new FileReader(file));
         StringBuilder stringBuilder = new StringBuilder();
         String line = null;
@@ -194,11 +211,33 @@ public class  Agent extends Thread {
             stringBuilder.append(line);
         }
         String query = stringBuilder.toString().split("<QUERY>")[1].split("</QUERY>")[0];
-        this.requetes.add(query);
+
+    }
+    public Document getQueryDocument(String name) throws Exception {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document document = builder.parse(new File(getClass().getResource(name).getFile()));
+        document.getDocumentElement().normalize();
+        this.requetes.add(document);
+        return document;
+    }
+    public String extractXPathQuery(Document xmlQuery) {
+        NodeList queryNodes = xmlQuery.getElementsByTagName("QUERY");
+        Element queryElement = (Element) queryNodes.item(0);
+        String xpath = queryElement.getTextContent().trim();
+        return xpath;
+
     }
 
     public Document retrieveQuery(String query) throws Exception {
-        Document bd = xmlDocumentLoader(this.bdRepository);
+        Document bd = null;
+        try{
+            bd = xmlDocumentLoader();
+
+        }catch(Exception e){
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
         XPathFactory xpathfactory = XPathFactory.newInstance();
 
         XPath xpath = xpathfactory.newXPath();
@@ -217,11 +256,11 @@ public class  Agent extends Thread {
 
     }
 
-    public Document xmlDocumentLoader(String path) throws Exception {
+    public Document xmlDocumentLoader() throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         factory.setNamespaceAware(true);
         DocumentBuilder builder = factory.newDocumentBuilder();
-        Document doc = builder.parse(getClass().getResource(this.bdRepository).getFile());
+        Document doc = builder.parse(new File(getClass().getResource(this.bdRepository).getFile()));
         return doc;
     }
 
@@ -252,7 +291,7 @@ public class  Agent extends Thread {
     }
 
 
-    public static Document wrapWithQueryAndResult(Document filmDocument, String queryText) throws Exception {
+    public  Document wrapWithQueryAndResult(Document filmDocument, String queryText) throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document newDoc = builder.newDocument();
