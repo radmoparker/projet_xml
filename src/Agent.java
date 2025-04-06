@@ -13,6 +13,8 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.*;
 import java.io.*;
+import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.util.ArrayList;
 
 /*IMPORTANT : documentation pour échange de donnée entre threadjava :
@@ -21,6 +23,9 @@ import java.util.ArrayList;
  * */
 public class  Agent extends Thread {
     private final String color;
+    private final PrivateKey signatureKey;
+    private final PublicKey validationKey;
+
     private ArrayList<Document> requetes = new ArrayList<Document>();
 
     private  String queryRepository;
@@ -30,20 +35,20 @@ public class  Agent extends Thread {
     private String name;
     private String role;
 
-    public Agent(ExangeDataMonitor monitor,String bdRepository,String queryRepository,String name,String role,String color) {
+    public Agent(ExangeDataMonitor monitor, String bdRepository, String queryRepository, String name, String role, String color, PrivateKey signatureKey, PublicKey validationKey) {
         this.monitor = monitor;
         this.bdRepository = bdRepository;
         this.queryRepository = queryRepository;
         this.name = name;
         this.role = role;
         this.color = color;
+        this.signatureKey = signatureKey;
+        this.validationKey = validationKey;
         try {
             xmlQueryFileOpener();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
-
     }
 
 
@@ -54,21 +59,24 @@ public class  Agent extends Thread {
         }else{
             String type = data.get(0).toString();
             switch(type){
+                //Ici on répond à une requête
                 case "query":
-
                     Document documentAnswer =this.manageQuery((Document) data.get(1));
                     doNotify(documentAnswer);
 
                     break;
+               //Ici on traite la réponse à notre requête
                 case "answer":
                     this.manageAnswer(data.get(1));
                     doNotify(1,String.valueOf(data.get(1).hashCode()));
                     break;
+                //Ici on consulte la validation de notre réponse par l'interlocuteur
                 case "validation":
                     System.out.println(color+name+" : Mes donnés ont été validées ");
                     if(requetes.size()>0) {
                         Document query = requetes.remove(0);
-                        this.doNotify(query,0);
+                        Document signedQuery = signDocument(query);
+                        this.doNotify(signedQuery,0);
                     }else{
                         System.out.println(color+name+" : Je n'ai plus rien à lire  aurevoir !");
                         this.doNotify(-1,"noDataLeft");
@@ -80,10 +88,11 @@ public class  Agent extends Thread {
                 default:
                     break;
             }
-
         }
+    }
 
-
+    public Document signDocument(Document document) {
+        return document;
     }
 
     private void manageAnswer(Object doc) throws Exception {
@@ -108,7 +117,8 @@ public class  Agent extends Thread {
         System.out.println(color+name+" : Voici la réponse que je vais envoyé : ");
         Document queryDocument = retrieveQuery(xpathQuery);
         Document wrapedQueryDocument = wrapWithQueryAndResult(queryDocument, xpathQuery);
-        System.out.println(color+xmlDocumentDisplay(wrapedQueryDocument)+"\n");
+        Document signedQueryDocument = signDocument(wrapedQueryDocument);
+        System.out.println(color+xmlDocumentDisplay(signedQueryDocument)+"\n");
         return wrapedQueryDocument;
 
     }

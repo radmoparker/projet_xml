@@ -1,16 +1,35 @@
 import java.io.File;
+import java.security.*;
+import java.security.interfaces.DSAPrivateKey;
+import java.security.interfaces.DSAPublicKey;
 
 public class Main {
     public static void main(String[] args) {
-        String YELLOW = "\u001B[33m";
-        String BLUE = "\u001B[34m";
-        String PURPLE = "\u001B[35m";
-        String CYAN = "\u001B[36m";
-        String red = "\u001B[31m";
-        String green = "\u001B[32m";
+        String yellow = "\u001B[33m";
+        String blue = "\u001B[34m";
+        KeyPairGenerator kpg = null;
+        try {
+            kpg = KeyPairGenerator.getInstance("DSA");
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        kpg.initialize(2048);
+        KeyPair kpA = kpg.generateKeyPair();
+        KeyPair kpB = kpg.generateKeyPair();
+
+        PublicKey publicKeyA = kpA.getPublic();
+        PrivateKey privateKeyA = kpA.getPrivate();
+
+        PublicKey publicKeyB = kpB.getPublic();
+        PrivateKey privateKeyB = kpB.getPrivate();
+        System.out.println(kpA.getPrivate()==privateKeyA && kpA.getPublic()==publicKeyA && kpB.getPrivate()==privateKeyB && kpB.getPublic()==publicKeyB);
+
+
         ExangeDataMonitor monitor = new ExangeDataMonitor();
-        Agent agent1 = new Agent(monitor,"ressources/bd_xml_1.xml","requetes_1","batman",null,BLUE);
-        Agent agent2 = new Agent(monitor,"ressources/bd_xml_2.xml","requetes_2","robin","waiter",YELLOW);
+        Agent agent1 = new Agent(monitor,"ressources/bd_xml_1.xml","requetes_1","batman",null,blue,privateKeyA,publicKeyB);
+        Agent agent2 = new Agent(monitor,"ressources/bd_xml_2.xml","requetes_2","robin","waiter",yellow,privateKeyB,publicKeyA);
         agent2.start();
         agent1.start();
 
