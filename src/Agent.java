@@ -85,8 +85,8 @@ public class  Agent extends Thread {
                     System.out.println(color+name+" : Mes données ont été validées ");
                     if(requetes.size()>0) {
                         Document query = requetes.remove(0);
-                        Document signedQuery = signDocument(copyXmlDocument(query),"REQUETE");
                         System.out.println(color+this.name+" : je vais notifié la REQUETE : \n"+xmlDocumentDisplay(query));
+                        Document signedQuery = signDocument(copyXmlDocument(query),"REQUETE");
                         this.doNotify(query,signedQuery,0);
                     }else{
                         System.out.println(color+name+" : Je n'ai plus rien à lire  aurevoir !");
