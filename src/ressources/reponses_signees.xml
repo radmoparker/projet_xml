@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ANSWERS>
+
+    <ANSWER>
+        <QUERY>/db/film[titre='Killers of the Flower Moon']</QUERY>
+        <RESULT>
+            <film idfilm="F015">
+
+                <titre>Killers of the Flower Moon</titre>
+
+                <realisateur>Martin Scorsese</realisateur>
+
+                <synopsis>Une série de meurtres dans la nation Osage après la découverte de pétrole.</synopsis>
+
+                <annee>2023</annee>
+
+                <acteur>Leonardo DiCaprio</acteur>
+
+                <acteur>Robert De Niro</acteur>
+
+                <acteur>Lily Gladstone</acteur>
+
+            </film>
+        </RESULT>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>TETByVfvNOQRs4udu7MAiXUymVqlLrk3IWLqASjoPhs=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>KdDMZzRJryp43rVy6/OMgtQdv8ipBPHZkdku7AOcHm8x5c8itsVgWAjdCJq3R8e+rocSjo7L0dA=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>I3SQJpaF1GdtvVgfIeuMycL7UDhB2vn0Oyrgyn4doOvFmIvYccFAM9CV7b0b6DWvz5YV6Yv1pRhk&#13;
+                            w0VzlL8NMrXYC40oJDuk4UUuxvVjJ4wSEu/O9l0qgTosJ8IRwci2JR4A2QWWjimCzm7sefOUiCIk&#13;
+                            J5evbHhnznFtUPtaJgZ0I78zWQ+/k26CE1yjCD6LwPDJFB1BmK5RvQ1HYifbMnhPZFku/JdYhrMy&#13;
+                            hloIgrPxC8LYuKAK1YNB8TwOD+CO0xU1Qo8W+6S9YFpONNFPjzRCr3MLYTVCuRteXeeJAE3LsILQ&#13;
+                            aPMtrbzwKwL28132UxsSLxJrMdCmP7Plfb7PQA==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </ANSWER>
+
+
+
+    <ANSWER>
+        <QUERY>/db/film[titre='Oppenheimer']</QUERY>
+        <RESULT>
+            <film idfilm="F012">
+
+                <titre>Oppenheimer</titre>
+
+                <realisateur>Christopher Nolan</realisateur>
+
+                <synopsis>Le parcours de J. Robert Oppenheimer, le père de la bombe atomique.</synopsis>
+
+                <annee>2023</annee>
+
+                <acteur>Cillian Murphy</acteur>
+
+                <acteur>Emily Blunt</acteur>
+
+                <acteur>Robert Downey Jr.</acteur>
+
+            </film>
+        </RESULT>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>5EYO8bWSrEdl+bN//j+Smbu+2mOn6EeoHuQ/KnnLU48=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>ZopTtqMXzVm+ZsevPnGqlCR5TmvrQ1GzifqWW3sqA32+KaLB2r6qVpODZhKaKELCgayUXn8/pK4=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>NyHeXmS0plvK2Y39rQYqfMxqDyfoocizA7Y45pjOQ+7jokwUTXytaEAR7LvaFEbks7Hoqz9rVlvK&#13;
+                            hmlepT5xgN1ufyiNPil1sQ6QtaWVCP/2PTQX27GYshfIJB7KaSIUhHVFlQduPbc6ydpBW7VuyphR&#13;
+                            wyWhOWAbiFsip6bAaosE3hYvBC85I3u39Seq6hmgXWPn6Vr7XjQ2sRoE1PEvAHIpP76pYmal0N3i&#13;
+                            ih6o3ifNeDpbR+kPOm6WQWJXH0sP/5hT7tZ7Rw2fcIiW2N371yRCS4Xi2TFw9aTJd/+MnrUYb32v&#13;
+                            ydcPiwgxOHyqfEtSVSr2oKSsmPv2Io4wpl1hEg==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </ANSWER>
+
+
+    <ANSWER>
+        <QUERY>/db/film[titre='Shutter Island']</QUERY>
+        <RESULT>
+            <film idfilm="F011">
+
+                <titre>Shutter Island</titre>
+
+                <realisateur>Martin Scorsese</realisateur>
+
+                <synopsis>Un enquêteur enquête sur la disparition d'une patiente dans un hôpital psychiatrique.</synopsis>
+
+                <annee>2010</annee>
+
+                <acteur>Leonardo DiCaprio</acteur>
+
+                <acteur>Mark Ruffalo</acteur>
+
+                <acteur>Ben Kingsley</acteur>
+
+            </film>
+        </RESULT>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>5u5qEB++sWk7hsuoSB1QjUU2fPkR/C2JWJMewOScTeQ=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>BOjJIkpn2QwAN4rgpv0nyrq0nJVcksg1XGL+ySTryeRcJBM6l7r3H0gjl6J2WCuvQirj5T+VIcQ=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>I3SQJpaF1GdtvVgfIeuMycL7UDhB2vn0Oyrgyn4doOvFmIvYccFAM9CV7b0b6DWvz5YV6Yv1pRhk&#13;
+                            w0VzlL8NMrXYC40oJDuk4UUuxvVjJ4wSEu/O9l0qgTosJ8IRwci2JR4A2QWWjimCzm7sefOUiCIk&#13;
+                            J5evbHhnznFtUPtaJgZ0I78zWQ+/k26CE1yjCD6LwPDJFB1BmK5RvQ1HYifbMnhPZFku/JdYhrMy&#13;
+                            hloIgrPxC8LYuKAK1YNB8TwOD+CO0xU1Qo8W+6S9YFpONNFPjzRCr3MLYTVCuRteXeeJAE3LsILQ&#13;
+                            aPMtrbzwKwL28132UxsSLxJrMdCmP7Plfb7PQA==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </ANSWER>
+
+
+
+    <ANSWER>
+        <QUERY>/db/film[titre='Memento']</QUERY>
+        <RESULT>
+            <film idfilm="F002">
+
+                <titre>Memento</titre>
+
+                <realisateur>Christopher Nolan</realisateur>
+
+                <synopsis>Un homme amnésique utilise des notes et des tatouages pour retrouver le meurtrier de sa femme.</synopsis>
+
+                <annee>2000</annee>
+
+                <acteur>Guy Pearce</acteur>
+
+                <acteur>Carrie-Anne Moss</acteur>
+
+                <acteur>Joe Pantoliano</acteur>
+
+            </film>
+        </RESULT>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>iYISYTtY1rllkn26dwu5nNvzNxf/0yX39KuvjIpC+6c=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>X0soppsWfR2BYhHDLLaxVzkM5zzUxLjummZLnlpDdH3O/Enc8j1UYPxwrmFCNGd9IdHC58CAdQc=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>NyHeXmS0plvK2Y39rQYqfMxqDyfoocizA7Y45pjOQ+7jokwUTXytaEAR7LvaFEbks7Hoqz9rVlvK&#13;
+                            hmlepT5xgN1ufyiNPil1sQ6QtaWVCP/2PTQX27GYshfIJB7KaSIUhHVFlQduPbc6ydpBW7VuyphR&#13;
+                            wyWhOWAbiFsip6bAaosE3hYvBC85I3u39Seq6hmgXWPn6Vr7XjQ2sRoE1PEvAHIpP76pYmal0N3i&#13;
+                            ih6o3ifNeDpbR+kPOm6WQWJXH0sP/5hT7tZ7Rw2fcIiW2N371yRCS4Xi2TFw9aTJd/+MnrUYb32v&#13;
+                            ydcPiwgxOHyqfEtSVSr2oKSsmPv2Io4wpl1hEg==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </ANSWER>
+
+
+    <ANSWER>
+        <QUERY>/db/film[titre='The Departed']</QUERY>
+        <RESULT>
+            <film idfilm="F010">
+
+                <titre>The Departed</titre>
+
+                <realisateur>Martin Scorsese</realisateur>
+
+                <synopsis>Un policier infiltré et une taupe dans la police s'affrontent.</synopsis>
+
+                <annee>2006</annee>
+
+                <acteur>Leonardo DiCaprio</acteur>
+
+                <acteur>Matt Damon</acteur>
+
+                <acteur>Jack Nicholson</acteur>
+
+            </film>
+        </RESULT>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>UjEXdeXIIbjRh7gJT9Z9TeKzi1QFwdzKhGiBOi/uSjk=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>iZk2efqZFCHtU221i1EGLLPxQmhbLIAK6qvXP3JP/idqbbvgTmvW0pcKQxG75dAXVmLENwTw0kM=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>I3SQJpaF1GdtvVgfIeuMycL7UDhB2vn0Oyrgyn4doOvFmIvYccFAM9CV7b0b6DWvz5YV6Yv1pRhk&#13;
+                            w0VzlL8NMrXYC40oJDuk4UUuxvVjJ4wSEu/O9l0qgTosJ8IRwci2JR4A2QWWjimCzm7sefOUiCIk&#13;
+                            J5evbHhnznFtUPtaJgZ0I78zWQ+/k26CE1yjCD6LwPDJFB1BmK5RvQ1HYifbMnhPZFku/JdYhrMy&#13;
+                            hloIgrPxC8LYuKAK1YNB8TwOD+CO0xU1Qo8W+6S9YFpONNFPjzRCr3MLYTVCuRteXeeJAE3LsILQ&#13;
+                            aPMtrbzwKwL28132UxsSLxJrMdCmP7Plfb7PQA==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </ANSWER>
+
+
+    <ANSWER>
+        <QUERY>/db/film[titre='Interstellar']</QUERY>
+        <RESULT>
+            <film idfilm="F009">
+
+                <titre>Interstellar</titre>
+
+                <realisateur>Christopher Nolan</realisateur>
+
+                <synopsis>Un groupe d'astronautes voyage à travers un trou de ver pour sauver l'humanité.</synopsis>
+
+                <annee>2014</annee>
+
+                <acteur>Matthew McConaughey</acteur>
+
+                <acteur>Anne Hathaway</acteur>
+
+                <acteur>Jessica Chastain</acteur>
+
+            </film>
+        </RESULT>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>5Pp2iYrbFQLa/y0oAL8Trllc93lY3aDLJUDiQEp7iXs=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>h5wQUACNd5xWyFiv3mAAB+1Pe/QQ9y/+Z6b0Gbld1QU4uu7eX47i1Jzgk4LJaAmMpd0wtb7hRbE=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>NyHeXmS0plvK2Y39rQYqfMxqDyfoocizA7Y45pjOQ+7jokwUTXytaEAR7LvaFEbks7Hoqz9rVlvK&#13;
+                            hmlepT5xgN1ufyiNPil1sQ6QtaWVCP/2PTQX27GYshfIJB7KaSIUhHVFlQduPbc6ydpBW7VuyphR&#13;
+                            wyWhOWAbiFsip6bAaosE3hYvBC85I3u39Seq6hmgXWPn6Vr7XjQ2sRoE1PEvAHIpP76pYmal0N3i&#13;
+                            ih6o3ifNeDpbR+kPOm6WQWJXH0sP/5hT7tZ7Rw2fcIiW2N371yRCS4Xi2TFw9aTJd/+MnrUYb32v&#13;
+                            ydcPiwgxOHyqfEtSVSr2oKSsmPv2Io4wpl1hEg==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </ANSWER>
+
+
+    <ANSWER>
+        <QUERY>/db/film[titre='Goodfellas']</QUERY>
+        <RESULT>
+            <film idfilm="F005">
+
+                <titre>Goodfellas</titre>
+
+                <realisateur>Martin Scorsese</realisateur>
+
+                <synopsis>L'ascension et la chute de Henry Hill dans le monde de la mafia.</synopsis>
+
+                <annee>1990</annee>
+
+                <acteur>Ray Liotta</acteur>
+
+                <acteur>Robert De Niro</acteur>
+
+                <acteur>Joe Pesci</acteur>
+
+            </film>
+        </RESULT>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>fY2OMv4YzG9+uZa/c8TW43Y2vMBYiEhtmRkyOy+5FQs=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>bU4dsVhA5HHQN8+orXbfQ4nZfN3qdCZFJIMu9U2R4Agk/NMPoseQVvXCUtdeKXUQNYsYhiR/WZU=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>I3SQJpaF1GdtvVgfIeuMycL7UDhB2vn0Oyrgyn4doOvFmIvYccFAM9CV7b0b6DWvz5YV6Yv1pRhk&#13;
+                            w0VzlL8NMrXYC40oJDuk4UUuxvVjJ4wSEu/O9l0qgTosJ8IRwci2JR4A2QWWjimCzm7sefOUiCIk&#13;
+                            J5evbHhnznFtUPtaJgZ0I78zWQ+/k26CE1yjCD6LwPDJFB1BmK5RvQ1HYifbMnhPZFku/JdYhrMy&#13;
+                            hloIgrPxC8LYuKAK1YNB8TwOD+CO0xU1Qo8W+6S9YFpONNFPjzRCr3MLYTVCuRteXeeJAE3LsILQ&#13;
+                            aPMtrbzwKwL28132UxsSLxJrMdCmP7Plfb7PQA==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </ANSWER>
+
+
+    <ANSWER>
+        <QUERY>/db/film[titre='The Dark Knight']</QUERY>
+        <RESULT>
+            <film idfilm="F006">
+
+                <titre>The Dark Knight</titre>
+
+                <realisateur>Christopher Nolan</realisateur>
+
+                <synopsis>Batman affronte le Joker, qui plonge Gotham dans le chaos.</synopsis>
+
+                <annee>2008</annee>
+
+                <acteur>Christian Bale</acteur>
+
+                <acteur>Heath Ledger</acteur>
+
+                <acteur>Aaron Eckhart</acteur>
+
+            </film>
+        </RESULT>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>Ex45Yfw4pwgV6CTOysIqfk7UYDAYeMRD4oJEh1zMn3g=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>KD1iuaoGbb0Yvte0joU7YVC85HtDqqHE9QsexZ/hPzkz516CLVVIl+tzsxdx2cZDWSVNsLluclY=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>NyHeXmS0plvK2Y39rQYqfMxqDyfoocizA7Y45pjOQ+7jokwUTXytaEAR7LvaFEbks7Hoqz9rVlvK&#13;
+                            hmlepT5xgN1ufyiNPil1sQ6QtaWVCP/2PTQX27GYshfIJB7KaSIUhHVFlQduPbc6ydpBW7VuyphR&#13;
+                            wyWhOWAbiFsip6bAaosE3hYvBC85I3u39Seq6hmgXWPn6Vr7XjQ2sRoE1PEvAHIpP76pYmal0N3i&#13;
+                            ih6o3ifNeDpbR+kPOm6WQWJXH0sP/5hT7tZ7Rw2fcIiW2N371yRCS4Xi2TFw9aTJd/+MnrUYb32v&#13;
+                            ydcPiwgxOHyqfEtSVSr2oKSsmPv2Io4wpl1hEg==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </ANSWER>
+
+
+    <ANSWER>
+        <QUERY>/db/film[titre='Taxi Driver']</QUERY>
+        <RESULT>
+            <film idfilm="F002">
+
+                <titre>Taxi Driver</titre>
+
+                <realisateur>Martin Scorsese</realisateur>
+
+                <synopsis>Un vétéran solitaire devient chauffeur de taxi à New York et sombre dans la violence.</synopsis>
+
+                <annee>1976</annee>
+
+                <acteur>Robert De Niro</acteur>
+
+                <acteur>Jodie Foster</acteur>
+
+                <acteur>Harvey Keitel</acteur>
+
+            </film>
+        </RESULT>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>f/t7IYPV80+E0i+iMpkFJ5awLocC28bjVOFQ/S26v2o=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>Achzc7aJcIfD7LQpCgBwQaQDawUs61AxnCOF5XDAgLguGPReNbjRLfZNxd+fS0YPu0HLmr8Mibc=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>I3SQJpaF1GdtvVgfIeuMycL7UDhB2vn0Oyrgyn4doOvFmIvYccFAM9CV7b0b6DWvz5YV6Yv1pRhk&#13;
+                            w0VzlL8NMrXYC40oJDuk4UUuxvVjJ4wSEu/O9l0qgTosJ8IRwci2JR4A2QWWjimCzm7sefOUiCIk&#13;
+                            J5evbHhnznFtUPtaJgZ0I78zWQ+/k26CE1yjCD6LwPDJFB1BmK5RvQ1HYifbMnhPZFku/JdYhrMy&#13;
+                            hloIgrPxC8LYuKAK1YNB8TwOD+CO0xU1Qo8W+6S9YFpONNFPjzRCr3MLYTVCuRteXeeJAE3LsILQ&#13;
+                            aPMtrbzwKwL28132UxsSLxJrMdCmP7Plfb7PQA==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </ANSWER>
+
+
+    <ANSWER>
+        <QUERY>/db/film[titre='Inception']</QUERY>
+        <RESULT>
+            <film idfilm="F007">
+
+                <titre>Inception</titre>
+
+                <realisateur>Christopher Nolan</realisateur>
+
+                <synopsis>Un voleur utilise la technologie pour infiltrer les rêves et implanter une idée.</synopsis>
+
+                <annee>2010</annee>
+
+                <acteur>Leonardo DiCaprio</acteur>
+
+                <acteur>Joseph Gordon-Levitt</acteur>
+
+                <acteur>Ellen Page</acteur>
+
+            </film>
+        </RESULT>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>EQunIshM7B1iIE7WveSsny3Y+FMT+VBra8RMTvRjQjw=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>r0CHWIUasF7p/FrbOFni3KBmITHFyg+Ym4L/nW0aO4vV9D8RL4k4PiAIxfAK6GimjbfRS4ONbng=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>NyHeXmS0plvK2Y39rQYqfMxqDyfoocizA7Y45pjOQ+7jokwUTXytaEAR7LvaFEbks7Hoqz9rVlvK&#13;
+                            hmlepT5xgN1ufyiNPil1sQ6QtaWVCP/2PTQX27GYshfIJB7KaSIUhHVFlQduPbc6ydpBW7VuyphR&#13;
+                            wyWhOWAbiFsip6bAaosE3hYvBC85I3u39Seq6hmgXWPn6Vr7XjQ2sRoE1PEvAHIpP76pYmal0N3i&#13;
+                            ih6o3ifNeDpbR+kPOm6WQWJXH0sP/5hT7tZ7Rw2fcIiW2N371yRCS4Xi2TFw9aTJd/+MnrUYb32v&#13;
+                            ydcPiwgxOHyqfEtSVSr2oKSsmPv2Io4wpl1hEg==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </ANSWER>
+
+    BATMAN : je  vais attendre
+
+    ROBIN : Voici la réponse à ma requête :
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <ANSWER>
+        <QUERY>/db/film[titre='Inception']</QUERY>
+        <RESULT>
+            <film idfilm="F007">
+
+                <titre>Inception</titre>
+
+                <realisateur>Christopher Nolan</realisateur>
+
+                <synopsis>Un voleur utilise la technologie pour infiltrer les rêves et implanter une idée.</synopsis>
+
+                <annee>2010</annee>
+
+                <acteur>Leonardo DiCaprio</acteur>
+
+                <acteur>Joseph Gordon-Levitt</acteur>
+
+                <acteur>Ellen Page</acteur>
+
+            </film>
+        </RESULT>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>EQunIshM7B1iIE7WveSsny3Y+FMT+VBra8RMTvRjQjw=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>r0CHWIUasF7p/FrbOFni3KBmITHFyg+Ym4L/nW0aO4vV9D8RL4k4PiAIxfAK6GimjbfRS4ONbng=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>NyHeXmS0plvK2Y39rQYqfMxqDyfoocizA7Y45pjOQ+7jokwUTXytaEAR7LvaFEbks7Hoqz9rVlvK&#13;
+                            hmlepT5xgN1ufyiNPil1sQ6QtaWVCP/2PTQX27GYshfIJB7KaSIUhHVFlQduPbc6ydpBW7VuyphR&#13;
+                            wyWhOWAbiFsip6bAaosE3hYvBC85I3u39Seq6hmgXWPn6Vr7XjQ2sRoE1PEvAHIpP76pYmal0N3i&#13;
+                            ih6o3ifNeDpbR+kPOm6WQWJXH0sP/5hT7tZ7Rw2fcIiW2N371yRCS4Xi2TFw9aTJd/+MnrUYb32v&#13;
+                            ydcPiwgxOHyqfEtSVSr2oKSsmPv2Io4wpl1hEg==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </ANSWER>
+
+
+
+</ANSWERS>

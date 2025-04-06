@@ -1,0 +1,335 @@
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<QUERRIES>
+
+    <QUERY>
+        /db/film[titre='Killers of the Flower Moon']
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>tsDLyj05wTY/5R+V57csS6H20KhEzecbtD7fiMuWfD0=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>lybSLedbuuyhcvcvBcj8L64MDgC2LaMXVtfid04zBitXh+ATmhyMRkgpXtBCc8DJeO5vgI7VryE=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>ddO4kABM99Y6a8LJMayJ73DG+oRtY4S54rL3hXUXQgDcPekoVWR17Qc3dQfOj95Yv9ycIDFtYYlj&#13;
+                            XQ+IUOgisQsCOZ81tHh2ELUQqtAgbNo9nNzY8k/+iXFBDfNEoJdliJtNDrcc+bGQ1Zrf6nasDrnY&#13;
+                            zq7NQNysZxlrYbbspkfBpVLjKCheSmhWmkTngq3E1P8PoeEkeFcldvXsy1RBpAO01IPHW+88Wr6R&#13;
+                            CA6VwbNwksvJufx7FBwNXxoAmW9sveneBU7RnmuYkJ+fEbQPi5esia/Uzfz+/tnYiO4z64+/G+gE&#13;
+                            Z18yGLM01d0g5nJFTm82zH5F8vaoYv9XUtLcCA==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </QUERY>
+
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <QUERY>
+        /db/film[titre='Oppenheimer']
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>ux/ssIj/Gg1lVlNp+J9iVFqWjcLY+h01F/GPSp80i3g=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>iLeMe/z+hprx4SdtKi8HTyRW7zOH+L+vLHe7QjRohngxn6y6BQh6QnetWU/rBMNr0k6+wEi1u5o=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>EE3K3xJA9OVh/K4dzocLFp4kmTr3ly85dZXUb2tTq1NFjbdIRQFF2qg0j9TwSrYNS8Z/lYPzgMYY&#13;
+                            77QXVNzHm/vjyfkt6xsWaeRg9RnryUjKDhWqL45iZi/INCK7N4hct7uD5QEQjf2u4Akx5Ant3rBl&#13;
+                            i64sPrOwNBLIk/x2pDW+rb0zpTV29lJuCNKtlXHmJHaXcXlw0VDfxyCHnIoOWPfvXwOzUpqgnY8n&#13;
+                            nWIwUzeHUYiQCEOG2jD+UXLF6p3e0xGVC7fTHFQnbhO1lmVdUHm17LBT56TL8iNTMODM8sx1zMzQ&#13;
+                            9VTQ0TlYjTe/6aq5l8VSjXEEW24X64v9NowhXg==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </QUERY>
+
+
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <QUERY>
+        /db/film[titre='The Departed']
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>4HrKAX0nbNorw/fbF0yjTjJ2h63+grlRNja2FUAiQec=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>m1cpuXtKP4gS/K0uBa38QQaUOj2EEvnkWl/fA6dkBKhbGG3EKM+UEBVGu/ijpZrCniDpPCqL3No=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>KGiEj8wmsbI2fsydSN7xB4g39pMEugKfGwdJ9cxLQieOspt/ZoaCvgZOUfNmo0PTNXAWliW6lBYe&#13;
+                            sbrtmmVbNHZV3KfkBpmXPYtQMFknDNcHJH/jCkHTG+NDeHUV+Z0/tm2bscS1/XWBiwBiDWjViRx6&#13;
+                            ozyPAOgeMFfRNE90JDGZ7uLA+kmeVQ6gAS7DlE6RG6uHUf9aAQH+EcC6dROChZp53yD39CvlXQiD&#13;
+                            miqVvh4wvug8Z01egqD+0adjg7ltCG2CudWe9RGXZkFp5VKJpLg3JbLw598HYWU4Y0rahdbtJ1+Z&#13;
+                            34wOTPyWqD8Y3nm95PqbkYxfvfdbXGX2f0oOqw==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </QUERY>
+
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <QUERY>
+        /db/film[titre='Interstellar']
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>gbMkhRXmPxIBGn7SqmT0Ue8xtYt4LCnj05A+t8pzp2M=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>dCtrO2mUybsFL6cKZ+TTRjaARDiPMSNjsybxNq5AumUq8/fsWJ+BKYaKqtgO/2royP8uSksXtC0=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>EE3K3xJA9OVh/K4dzocLFp4kmTr3ly85dZXUb2tTq1NFjbdIRQFF2qg0j9TwSrYNS8Z/lYPzgMYY&#13;
+                            77QXVNzHm/vjyfkt6xsWaeRg9RnryUjKDhWqL45iZi/INCK7N4hct7uD5QEQjf2u4Akx5Ant3rBl&#13;
+                            i64sPrOwNBLIk/x2pDW+rb0zpTV29lJuCNKtlXHmJHaXcXlw0VDfxyCHnIoOWPfvXwOzUpqgnY8n&#13;
+                            nWIwUzeHUYiQCEOG2jD+UXLF6p3e0xGVC7fTHFQnbhO1lmVdUHm17LBT56TL8iNTMODM8sx1zMzQ&#13;
+                            9VTQ0TlYjTe/6aq5l8VSjXEEW24X64v9NowhXg==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </QUERY>
+
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <QUERY>
+        /db/film[titre='Goodfellas']
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>yyoo7DvsLFYTaDFi9X06MVrBFHnj+o0FUcVTYD62Zlo=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>e5weH/2SO6PQ18/a6jaQy9yhvzT0KF0s0Ca5WiFsF81n3s+8ZIJBLJX8XNNN2pcR+qf1QGdtkTU=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>KGiEj8wmsbI2fsydSN7xB4g39pMEugKfGwdJ9cxLQieOspt/ZoaCvgZOUfNmo0PTNXAWliW6lBYe&#13;
+                            sbrtmmVbNHZV3KfkBpmXPYtQMFknDNcHJH/jCkHTG+NDeHUV+Z0/tm2bscS1/XWBiwBiDWjViRx6&#13;
+                            ozyPAOgeMFfRNE90JDGZ7uLA+kmeVQ6gAS7DlE6RG6uHUf9aAQH+EcC6dROChZp53yD39CvlXQiD&#13;
+                            miqVvh4wvug8Z01egqD+0adjg7ltCG2CudWe9RGXZkFp5VKJpLg3JbLw598HYWU4Y0rahdbtJ1+Z&#13;
+                            34wOTPyWqD8Y3nm95PqbkYxfvfdbXGX2f0oOqw==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </QUERY>
+
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <QUERY>
+        /db/film[titre='The Dark Knight']
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>aK5/0P0jAq1u9fVfAhQdrwuQ2FG3X0d4L5tCRLrNI+I=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>n8d1Is+lKDP0hkrkTMmgEZZJkQOgGmqoj/e3NV7gPBLwoAeUDXO2xIZra/Z/5dBzEYYqOWIiN9A=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>EE3K3xJA9OVh/K4dzocLFp4kmTr3ly85dZXUb2tTq1NFjbdIRQFF2qg0j9TwSrYNS8Z/lYPzgMYY&#13;
+                            77QXVNzHm/vjyfkt6xsWaeRg9RnryUjKDhWqL45iZi/INCK7N4hct7uD5QEQjf2u4Akx5Ant3rBl&#13;
+                            i64sPrOwNBLIk/x2pDW+rb0zpTV29lJuCNKtlXHmJHaXcXlw0VDfxyCHnIoOWPfvXwOzUpqgnY8n&#13;
+                            nWIwUzeHUYiQCEOG2jD+UXLF6p3e0xGVC7fTHFQnbhO1lmVdUHm17LBT56TL8iNTMODM8sx1zMzQ&#13;
+                            9VTQ0TlYjTe/6aq5l8VSjXEEW24X64v9NowhXg==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </QUERY>
+
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <QUERY>
+        /db/film[titre='Taxi Driver']
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>NVtbezi8X69rMyHAVDp9Filp4ya9sUalQibjCQrnv0o=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>nxP8S52eKHEOYxtg3HMmbyiWXWrwZe/36KBORJurs+g1rFdV6cpbCjiB5ZAb5UFggtpO/FIX03E=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>KGiEj8wmsbI2fsydSN7xB4g39pMEugKfGwdJ9cxLQieOspt/ZoaCvgZOUfNmo0PTNXAWliW6lBYe&#13;
+                            sbrtmmVbNHZV3KfkBpmXPYtQMFknDNcHJH/jCkHTG+NDeHUV+Z0/tm2bscS1/XWBiwBiDWjViRx6&#13;
+                            ozyPAOgeMFfRNE90JDGZ7uLA+kmeVQ6gAS7DlE6RG6uHUf9aAQH+EcC6dROChZp53yD39CvlXQiD&#13;
+                            miqVvh4wvug8Z01egqD+0adjg7ltCG2CudWe9RGXZkFp5VKJpLg3JbLw598HYWU4Y0rahdbtJ1+Z&#13;
+                            34wOTPyWqD8Y3nm95PqbkYxfvfdbXGX2f0oOqw==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </QUERY>
+
+
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <QUERY>
+        /db/film[titre='Inception']
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2009/xmldsig11#dsa-sha256"/>
+                <Reference URI="">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>goSk/WKC+ik6nHgz24gMus4YQAe9AMxNs/0pimRud74=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>BCIThpPUS/S/HCWzGrb7tiwnckjHUVEq6zFQTyKNVh7BEFgAvksWCRkGtz+9UHkXqVy0LIKidU4=</SignatureValue>
+            <KeyInfo>
+                <KeyValue>
+                    <DSAKeyValue>
+                        <P>j3k12bmq6b+r7Yh6z0lRtvMuxZ47rzcY6OrElh8+/TYG50NRqcQYMzm4CefCrhxTm6dHW4XQEa24&#13;
+                            tHmHdUmEaVysDo8UszYIKKIv+icRCj1iqZNFNAmg/mlsRlj4S90ggZw3CaAQV7GVrc0AIz26VIS2&#13;
+                            KR+dZI74g0SGd5ec7AS0NKasLnXpmF3iPbApL8ERjJ/6nYGB5zONt5K3MNe540lZL2gJmHIVORXq&#13;
+                            PWuLRlPGM0WPgDsypMLg8nKQJW5OP4o7CDihxFDk4YwaKaN9316hQ95LZv8EkD7VzxYj4VjUh8YI&#13;
+                            6X8hHNgdyiPLbjgHZfgi40K+SEwFdjk5YBzWZw==</P>
+                        <Q>uvaWpoV499/e5/pnyXfHhe8ysjO65YDAvNVpXQ==</Q>
+                        <G>FqZcWCBIUHBOdQKjl1cEDTTaOjR4wVTU5KXALSQu4E+W5h5L0JBKvayPN+6x4J8xgtI8kEPLZC+I&#13;
+                            AEFg7fnKCbMgdqecMqYn8kc+kYebosTnRL0ggVRMtVuALDaNH6g+1InpTg+gaI4yQopceMR4xo0F&#13;
+                            J7ccmjq7CwvhLERoljnn08502xAaZaorh/ZMaCbbPscvS1WZg0u07bAvfJDppJbTpV1TW+v8RdT2&#13;
+                            GfY/Pe27hzklwvIk4HcxKW2oh+weR0j4fvtf3rdUhDFrIjLe5VPdrwIRKw0fAtowlzIk/ieu2oud&#13;
+                            Syki2bqL457Z4QOmPFKBC8aIt+LtQxbh7xfb3g==</G>
+                        <Y>EE3K3xJA9OVh/K4dzocLFp4kmTr3ly85dZXUb2tTq1NFjbdIRQFF2qg0j9TwSrYNS8Z/lYPzgMYY&#13;
+                            77QXVNzHm/vjyfkt6xsWaeRg9RnryUjKDhWqL45iZi/INCK7N4hct7uD5QEQjf2u4Akx5Ant3rBl&#13;
+                            i64sPrOwNBLIk/x2pDW+rb0zpTV29lJuCNKtlXHmJHaXcXlw0VDfxyCHnIoOWPfvXwOzUpqgnY8n&#13;
+                            nWIwUzeHUYiQCEOG2jD+UXLF6p3e0xGVC7fTHFQnbhO1lmVdUHm17LBT56TL8iNTMODM8sx1zMzQ&#13;
+                            9VTQ0TlYjTe/6aq5l8VSjXEEW24X64v9NowhXg==</Y>
+                    </DSAKeyValue>
+                </KeyValue>
+            </KeyInfo>
+        </Signature>
+    </QUERY>
+
+
+</QUERRIES>
